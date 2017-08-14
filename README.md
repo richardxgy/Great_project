@@ -1,0 +1,3 @@
+# Great_project
+来自Richard的Great_project
+这是一个PHP框架的项目,运用的是ci框架,后台数据库是MySQL
