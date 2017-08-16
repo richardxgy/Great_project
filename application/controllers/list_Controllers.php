@@ -18,6 +18,15 @@ class list_Controllers extends CI_Controller{
         //添加名叫model的类库：
         $this->load->model('list_Models');
     }
+    public function index(){
+        $this->load->view('list');
+    }
+    
+    public function choose(){
+    	echo $_GET['chooseby'];
+    	header("Access-Control-Allow-Origin: *");
+    }
+    
 
 
 }
