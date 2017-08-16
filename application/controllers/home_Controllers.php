@@ -19,4 +19,11 @@ class home_Controllers extends CI_Controller{
         $this->load->model('home_Models');
     }
 
+    public function index()
+    {
+
+        $this->load->view('home');
+    }
+
+
 }
