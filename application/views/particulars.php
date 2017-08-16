@@ -17,11 +17,13 @@
 <div id="dingbu">
 <div class="container" >
     <div class='row hidden-xs'>
-        <div class='col-lg-3   col-xs-12'>我是内容</div>
-        <div class='col-lg-3   col-xs-12'>我是内容</div>
-        <div class='col-lg-3   col-xs-12'>我是内容</div>
-        <div class='col-lg-3   col-xs-12'>我是内容</div>
-  </div>
+        <div class='col-lg-7   col-xs-12'><a href="#" class="cjh">请登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#" class="cjh">免费注册</a></div>
+        <div class='col-lg-5   col-xs-12'>
+            <div class='col-lg-3   col-xs-12'><a href="#" class="cjh"><span class="glyphicon glyphicon-home"></span>首页</a></div>
+            <div class='col-lg-3   col-xs-12'>&nbsp;<a href="#" class="cjh"><span class="glyphicon glyphicon-user"></span>个人中心</a></div>
+            <div class='col-lg-3   col-xs-12'>&nbsp;&nbsp;<a href="#" class="cjh"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a></div>
+            <div class='col-lg-3   col-xs-12'>&nbsp;&nbsp;<a href="#" class="cjh">客户服务</a></div>
+      </div>
 </div>
 </div>
 
