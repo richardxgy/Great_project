@@ -19,14 +19,10 @@ class list_Controllers extends CI_Controller{
         $this->load->model('list_Models');
     }
     public function index(){
-        $this->load->view('list');
+        //这里要在home页面传递一个参数来判断到底遍历哪些数据
+        $data['lists'] = $this->list_Models->selectdata();
+        $this->load->view('list',$data);
     }
-    
-    public function choose(){
-    	echo $_GET['chooseby'];
-    	header("Access-Control-Allow-Origin: *");
-    }
-    
-
+    /*筛选*/
 
 }

@@ -11,5 +11,12 @@ class list_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
+    
+    function selectdata() {
+    	$sql='select * from  listproduce';
+		$result=$this->db->query($sql);
+		header("Access-Control-Allow-Origin: *");
+		return $result->result_array();
+    }
 
 }
