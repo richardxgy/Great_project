@@ -17,7 +17,14 @@ class shoppingCar_Controllers extends CI_Controller{
         //添加名叫helper的类库：
         $this->load->helper('url');
         //添加名叫model的类库：
-        $this->load->model('shoppingCar_Models');
+//        $this->load->model('shoppingCar_Models');
+
+    }
+
+    public function index()
+    {
+
+        $this->load->view('shoppingCar');
     }
 
 }
