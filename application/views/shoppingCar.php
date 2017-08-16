@@ -15,5 +15,17 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default navbar-fixed-top nav1 hidden-xs">
+    <div class="container">
+        <ul class="row" >
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</li>
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>地区</li>
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-file" aria-hidden="true"></span>账号</li>
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>我的订单</li>
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人中心</li>
+            <li  class="col-md-2 "><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>购物车</li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>
