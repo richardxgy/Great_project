@@ -4,14 +4,18 @@
 }
 .list{
 	list-style-type: none;
-	
 }
 .nav .list li{
+	margin-right:20px;
+	text-align: center;
 	float:left;
 	width:10%;
 }
 .nav{
 	border:1px solid darkgrey;
+	height:32px;
+	line-height: 30px;
+	overflow: hidden;
 }
 .paixu{
 	border:1px solid grey;

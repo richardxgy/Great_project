@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,29 +13,28 @@
     <title>列表</title>
 </head>
 <body>
-	<div class='main' id="app">
-		<!--分类-->
+	<div class='main' ng-app='myapp' ng-controller='mycontrol'>
 		<div class="nav">
 			<ul class="list">
 				<li>分类</li>
-				<li>零食</li>
-				<li>$</li>
-				<li>$</li>
-				<li>$</li>
-				<li>$</li>
+				<?php
+//					foreach($foods as $food){
+//						echo '<li id='.$food['id'].'>'.$food['name'].'</li>';
+//					}
+				?>
 			</ul>
 		</div>
-		<!--排序-->
+		
 		<div class="paixu">
 			<ul class="list">
 				<li class="active">综合排序</li>
-				<li>销量</li>
-				<li>人气</li>
+				<li id='xiaoliang'>销量</li>
+				<li id='price'>价格</li>
 				<li>信用</li>
-				<li>总价</li>
+				<li>人气</li>
 			</ul>
 		</div>
-		<!--商品-->
+		
 		<div class="content">
 			<?php
 				foreach($lists as $list){
@@ -45,16 +45,31 @@
 							<div>'.$list['xiaoliang'].'</div>
 						</div>';
 				}
-				 
 			?>
 		</div>
 	</div>
 	<link href="<?php echo base_url() ?>/css/list.css" rel="stylesheet" type="text/css"/>
     <!--<script type="text/javascript" src="<?php echo base_url() ?>/js/list.js"></script>-->	
     <script type="text/javascript">
-    	$('ul').on('click','li',function(){
+    	$sortboolen=false;
+    	$('.paixu').on('click','li',function(){
+    		$sortboolen=!$sortboolen;
+    		console.log($sortboolen);
+    		var url="<?php echo site_url('list_Controllers/sort')?>"
 			$('li').attr('class','')
 			$(this).attr('class','active')
+				$.ajax({
+					type:"get",
+					url:url,
+					data:{
+						sortby:$(this).context.id,
+						sortboolen:$sortboolen
+					},
+					success:function(data){
+						console.log(data)
+					}
+				});
+			
 		})
     </script>
 </body>
