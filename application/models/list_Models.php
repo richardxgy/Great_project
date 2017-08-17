@@ -20,6 +20,7 @@ class list_Models extends CI_Model {
 //		header("Access-Control-Allow-Origin: *");
 //		return $result->result_array();
 //  }
+/*排序*/
     function selectpaixu($name,$sortby,$boolen) {
     	$sql='select * from '.$name;
 		$result=$this->db->query($sql);
@@ -48,6 +49,23 @@ class list_Models extends CI_Model {
 			}
 		}
 		return $list;
+    }
+   /*遍历分类*/
+	function selectleibie($leibie){
+		$sql='select * from '.$leibie;
+		$result=$this->db->query($sql);
+		header("Access-Control-Allow-Origin: *");
+		$leibielist = $result->result_array();
+		return $leibielist;
+	}
+	
+	/*分类选择*/
+    function choose($name,$leibie,$choose){
+    	$sql='select '.$name.'.id,'.$name.'.name,'.$name.'.fenlei1,'.$name.'.price,'.$name.'.xiaoliang,'.$name.'.fenlei2 from '.$name.' left join '.$leibie.' on '.$name.'.fenlei2 = '.$leibie.'.id where '.$name.'.fenlei2='.$choose;
+//		$sql='select * from listproduce left join food on listproduce.fenlei2 =food.id ';
+    	$result=$this->db->query($sql);
+    	header("Access-Control-Allow-Origin: *");
+    	return $result->result_array();
     }
 
 }
