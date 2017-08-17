@@ -4,8 +4,14 @@
     text-decoration:none;
 
 }
+li{list-style-type:none}
+a:link,a:visited,a:hover{text-decoration:none; outline:none;}
 
-#div{
+body{margin:0;
+    padding:0;
+    width:100%;
+    font-size:12px;
+    font-family: arial,"Lantinghei SC","Microsoft Yahei";
 
 }
 
@@ -15,4 +21,72 @@
 
 .headeraa{
     margin-right: 10px;
+}
+img, input {
+    vertical-align: middle;
+
+}
+
+.headint{
+    height: 55px;
+}
+.headsp{
+    background-color:#B4D5F5 ;
+}
+.nav-cont li{
+    float: left;
+    height: 50px;
+    line-height: 50px;
+    color: #1f1d1d;
+
+    width: 80px;
+    text-align: center;
+
+}
+
+.secdivquan {
+    height: 50px;
+    width: 120px;
+    line-height: 50px;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+    background-color: #DF6126;
+}
+.secdiv{
+    width: 90%;
+    height: 50px;
+
+}
+.nav-cont{
+    height: 50px;
+
+}
+.nav-ul li{
+    line-height: 50px;
+    font-size: 18px;
+    margin-right: 10px;
+
+}
+.nav-ul li a{
+    color: #1f1d1d;
+
+}
+
+.erjidiv{
+    width: 90%;
+    background-color: pink;
+}
+
+.erjiul li a{
+    display: block;
+    background-color: #2cc36b;
+    color: black;
+    width:120px;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    margin: 0;
+    border-bottom: 1px black solid;
 }
