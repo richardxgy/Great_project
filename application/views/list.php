@@ -1,4 +1,7 @@
-
+<?php
+//	var_dump ($lists);
+?>
+<!--再添加一个二级分类表，然后表的联立：美食表和二级分类表联立，页面分类遍历分类表-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +13,7 @@
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
     <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-    <title>列表</title>
+    <title>分类列表页面</title>
 </head>
 <body>
 	<div class='main' ng-app='myapp' ng-controller='mycontrol'>
@@ -18,8 +21,8 @@
 			<ul class="list">
 				<li>分类</li>
 				<?php
-//					foreach($foods as $food){
-//						echo '<li id='.$food['id'].'>'.$food['name'].'</li>';
+//					foreach($leibies as $leibie){
+//						echo '<li id='.$leibie['id'].'>'.$leibie['name'].'</li>';
 //					}
 				?>
 			</ul>
@@ -27,7 +30,7 @@
 		
 		<div class="paixu">
 			<ul class="list">
-				<li class="active">综合排序</li>
+				<li class="active" id='id'>综合排序</li>
 				<li id='xiaoliang'>销量</li>
 				<li id='price'>价格</li>
 				<li>信用</li>
@@ -54,22 +57,23 @@
     	$sortboolen=false;
     	$('.paixu').on('click','li',function(){
     		$sortboolen=!$sortboolen;
-    		console.log($sortboolen);
+    		$sortby=$(this).context.id;
     		var url="<?php echo site_url('list_Controllers/sort')?>"
+    		
 			$('li').attr('class','')
 			$(this).attr('class','active')
-				$.ajax({
-					type:"get",
-					url:url,
-					data:{
-						sortby:$(this).context.id,
-						sortboolen:$sortboolen
-					},
-					success:function(data){
-						console.log(data)
-					}
-				});
 			
+			$.ajax({
+				type:"get",
+				url:url,
+				data:{
+					sortby:$sortby,
+					sortboolen:$sortboolen
+				},
+				success:function(data){
+					console.log(data)
+				}
+			});
 		})
     </script>
 </body>

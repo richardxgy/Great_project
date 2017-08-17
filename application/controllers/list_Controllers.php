@@ -21,15 +21,17 @@ class list_Controllers extends CI_Controller{
     public function index(){
         //这里要在home页面传递一个参数来判断到底遍历哪些数据
         //$_GET['表名'],例如 listproduce
-        $data['lists'] = $this->list_Models->selectdata('listproduce');
+        $data['lists'] = $this->list_Models->selectpaixu('listproduce','id','true');
+//      $data['leibies'] = $this->list_Models->selectleibie('leibie');
         $this->load->view('list',$data);
     }
-    /*筛选*/
+    /*排序*/
 	public function sort(){
-//		var_dump($_GET);
 		header("Access-Control-Allow-Origin: *");
-		$data['lists'] = $this->list_Models->selectleibie('listproduce',$_GET['sortby'],$_GET['sortboolen']);
+		$data['lists'] = $this->list_Models->selectpaixu('listproduce',$_GET['sortby'],$_GET['sortboolen']);
 		$this->load->view('list',$data);
-//		var_dump($data);
+		
 	}
+	/*筛选*/
+	
 }

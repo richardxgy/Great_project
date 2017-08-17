@@ -20,7 +20,7 @@ class list_Models extends CI_Model {
 		header("Access-Control-Allow-Origin: *");
 		return $result->result_array();
     }
-    function selectleibie($name,$sortby,$boolen) {
+    function selectpaixu($name,$sortby,$boolen) {
     	$sql='select * from '.$name;
 		$result=$this->db->query($sql);
 		header("Access-Control-Allow-Origin: *");
