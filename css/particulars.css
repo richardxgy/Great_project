@@ -1,0 +1,18 @@
+*{      /*清楚原有的格式*/
+    padding: 0;
+    margin: 0;
+}
+ol,ul{   /*群组选择器*/
+    list-style: none;
+}
+#dingbu{
+    width:100%;
+    height:25px;
+    background-color: rgba(175,135,232,0.06);
+}
+.cjh{
+    color: #4F5155;
+}
+.cjh:hover{
+    color: #ff6600;
+}
