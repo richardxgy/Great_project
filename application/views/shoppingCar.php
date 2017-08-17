@@ -13,11 +13,9 @@
     <link href="<?php echo base_url() ?>/css/shoppingCar.css" rel="stylesheet" type="text/css"/>
 
 
-
     <title>购物车</title>
 </head>
 <body>
-<div id="app">
 <nav class="navbar navbar-default  nav1 hidden-xs">
     <div class="container">
         <ul class="row">
@@ -37,6 +35,7 @@
     <input type="text" placeholder="搜索" class="col-md-8 col-xs-5 searchinput">
     <button class="col-md-1 col-xs-3 searchbutton">搜索</button>
 </div>
+
 <!--表格-->
 <div class="list">
     <table class="container">
@@ -48,33 +47,38 @@
         <th class="col-md-1 hidden-xs">操作</th>
         </thead>
         <tbody>
-        <thead class="row" v-for="(x,index) in list">
+<?php
+$url = base_url() . "/images/";
+foreach ($shop as $value) {
+    echo '
+        <thead class="row" >
         <td class="col-md-4 col-xs-3">
             <div class="row">
-                <input type="checkbox" class="col-md-1 col-xs-2" v-model="x.bol" v-on:click="check(x)">
-                <img src="<?php echo base_url() ?>/images/kouhong.jpg" alt="" class="col-md-3 col-xs-12">
-                <p class="col-md-4 col-xs-12">良品铺子 手剥松子</p>
-                <p class="col-md-4 col-xs-12">{{x.information}}</p>
+                <input type="checkbox" class="col-md-1 col-xs-2" >
+                <img src="'.$url.$value['image'].'" alt="" class="col-md-3 col-xs-12">
+                <p class="col-md-4 col-xs-12">'.$value['name'].'</p>
+                <p class="col-md-4 col-xs-12">'.$value['information'].'</p>
 
             </div>
         </td>
-        <td class="col-md-1 col-xs-1">￥{{x.price}}</td>
+        <td class="col-md-1 col-xs-1">￥'.$value['price'].'</td>
         <td class="col-md-1 col-xs-1 row">
-            <button class="col-md-1 col-xs-1 hidden-xs" v-on:click="reduction(x,index)">-</button>
-            <input type="text" v-model="x.number"class="col-md-4 col-xs-12" style="padding: 1px">
-            <button class="col-md-1 col-xs-1 hidden-xs" v-on:click="add(x,index)">+</button>
+            <button class="col-md-1 col-xs-1 hidden-xs" >-</button>
+            <input type="text" value="'.$value['number'].'" class="col-md-4 col-xs-12" style="padding: 1px">
+            <button class="col-md-1 col-xs-1 hidden-xs">+</button>
         </td>
-        <td class="col-md-1 col-xs-1">￥{{x.amount}}</td>
+        <td class="col-md-1 col-xs-1">￥'.$value['amount'].'</td>
         <td class="col-md-1 col-xs-1 hidden-xs"><p>移入收藏夹</p>
-            <p v-on:click="del(index)">删除</p></td>
+            <p >删除</p></td>
         </thead>
+        ';}?>
         </tbody>
     </table>
 
 </div>
 <div class="chekall container">
 
-    <p class="col-md-1 col-xs-3"><input type="checkbox" v-model="cb" v-on:click="chall">全选</p>
+    <p class="col-md-1 col-xs-3"><input type="checkbox">全选</p>
     <p class="col-md-1 col-xs-3">删除</p>
     <p class="col-md-5  hidden-xs">移入收藏夹</p>
     <p class="col-md-2 col-xs-6">已选商品：2件</p>
@@ -84,7 +88,7 @@
 </div>
 
 <hr>
-</div>
+
 <script type="text/javascript" src="<?php echo base_url() ?>js/shoppingCar.js"></script>
 
 </body>
