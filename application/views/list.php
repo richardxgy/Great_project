@@ -41,11 +41,11 @@
 		<div class="content">
 			<?php
 				foreach($lists as $list){
-					echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id='.$list['id'].'>
-							<div>'.$list['name'].'</div>
-							<div>'.$list['fenlei1'].'</div>
-							<div>'.$list['price'].'</div>
-							<div>'.$list['xiaoliang'].'</div>
+					echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 idname" id='.$list['id'].'>
+							<div class="name">'.$list['name'].'</div>
+							<div class="fenlei1">'.$list['fenlei1'].'</div>
+							<div class="price">'.$list['price'].'</div>
+							<div class="xiaoliang">'.$list['xiaoliang'].'</div>
 						</div>';
 				}
 			?>
@@ -71,7 +71,20 @@
 					sortboolen:$sortboolen
 				},
 				success:function(data){
-					console.log(data)
+					if(data){
+						$('.content').html('');
+						let mydata =$.parseJSON(data);
+						console.log(mydata.lists);
+						for(let i = 0;i<mydata.lists.length;i++){
+							$('.content').append('div');
+							$('div').attr('id',i)
+							
+//							$('#'+i).attr('id',mydata.lists[i].id);
+//							console.log(mydata.lists[i].id)
+//							$('#'+i).html('<div class="name">'+mydata.lists[i].name+'</div><div class="fenlei1">'+mydata.lists[i].fenlei1+'</div><div class="price">'+mydata.lists[i].price+'</div><div class="xiaoliang">'+mydata.lists[i].xiaoliang+'</div>')
+						}
+						
+					}
 				}
 			});
 		})
