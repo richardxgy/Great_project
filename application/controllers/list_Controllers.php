@@ -29,7 +29,7 @@ class list_Controllers extends CI_Controller{
 	public function sort(){
 		header("Access-Control-Allow-Origin: *");
 		$data['lists'] = $this->list_Models->selectpaixu('listproduce',$_GET['sortby'],$_GET['sortboolen']);
-		$this->load->view('list',$data);
+		echo json_encode($data);
 		
 	}
 	/*筛选*/
