@@ -11,15 +11,6 @@ class list_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
-
-    //参数为表名
-//  function selectdata($name) {
-//  	$biao = $name;
-//  	$sql='select * from '.$name;
-//		$result=$this->db->query($sql);
-//		header("Access-Control-Allow-Origin: *");
-//		return $result->result_array();
-//  }
 /*排序*/
     function selectpaixu($name,$sortby,$boolen) {
     	$sql='select * from '.$name;

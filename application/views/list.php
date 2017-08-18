@@ -17,6 +17,10 @@
 </head>
 <body>
 	<div class='main'>
+				<?php 
+						echo '<div class="biaoname" style="display:none">'.$biaoname.'</div>';
+						echo '<div class="fenleiname" style="display:none">'.$fenleiname.'</div>';
+				?>
 		<div class="nav">
 			<ul class="list">
 				<li class="active">分类</li>
@@ -57,6 +61,8 @@
     	/*二级检索*/
     	var isbit=false;
    		$('.nav').on('click','li',function(){
+   			$biaoname=$('.biaoname').html();
+   			$fenleiname=$('.fenleiname').html();
 			$('li').attr('class','')
 			$(this).attr('class','active')
 		
@@ -66,6 +72,8 @@
    				type:"get",
    				url:url,
    				data:{
+   					fenleiname:$fenleiname,
+   					biaoname:$biaoname,
    					id:$(this).context.id
    				},
    				success:function(data){
@@ -85,6 +93,8 @@
    		/*排序*/
     	$sortboolen=false;
     	$('.paixu').on('click','li',function(){
+    		$biaoname=$('.biaoname').html();
+//  		$fenleiname=$('.fenleiname').innerHTML;
     		$sortboolen=!$sortboolen;
 	    	$sortby=$(this).context.id;
 			$('li').attr('class','')
@@ -95,6 +105,8 @@
 					type:"get",
 					url:url,
 					data:{
+						biaoname:$biaoname,
+//						fenleiname:$fenleiname,
 						sortby:$sortby,
 						sortboolen:$sortboolen
 					},
@@ -112,7 +124,6 @@
 				});
 			}else{
 				var arr = [];
-				console.log($('.content').children());
 				for(let i = 0 ;i<$('.content').children().length;i++){
 						arr.push($('.content').children()[i]);
 				}
@@ -120,12 +131,12 @@
 					var arr2= arr.reverse()
 					$('.content').append(arr2);
 				}else{
-					console.log(arr);
 					$('.content').append(arr);
 				}
 				
 			}
 		})
+
     </script>
 </body>
 </html>
