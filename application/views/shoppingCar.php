@@ -69,7 +69,7 @@ foreach ($shop as $value) {
         </td>
         <td class="col-md-1 col-xs-1" >￥<span id="amt'.$value['id'].'">'.$value['amount'].'</span></td>
         <td class="col-md-1 col-xs-1 hidden-xs"><p>移入收藏夹</p>
-            <p >删除</p></td>
+            <p id="'.$value['id'].'" onclick="delete_goods(event)">删除</p></td>
         </thead>
         ';}?>
         </tbody>
@@ -92,6 +92,9 @@ foreach ($shop as $value) {
 <script type="text/javascript" src="<?php echo base_url() ?>js/shoppingCar.js"></script>
 <script type="text/javascript">
     var url2 = "<?php echo site_url('shoppingCar_Controllers/getAjaxData')?>";
+</script>
+<script type="text/javascript">
+    var url3 = "<?php echo site_url('shoppingCar_Controllers/deleteData')?>";
 </script>
 </body>
 </html>
