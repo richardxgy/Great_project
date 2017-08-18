@@ -28,6 +28,9 @@
 	color:#FF6600;
 	background: white;
 }
+.nav .active{
+	color:#FF6600;
+}
 .paixu .list li{
 	margin-right:20px;
 	text-align: center;
