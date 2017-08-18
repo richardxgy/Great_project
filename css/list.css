@@ -41,6 +41,6 @@
 li:hover {
 	color:#FF6600;
 }
-.content div{
-
+.idname{
+	border:1px solid red;
 }

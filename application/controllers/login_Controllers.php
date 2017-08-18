@@ -18,7 +18,39 @@ class login_Controllers extends CI_Controller{
         $this->load->helper('url');
         //添加名叫model的类库：
         $this->load->model('login_Models');
+        $this->load->library('session');
     }
+    public function index(){
+    	$this->load->view('login');
+    }
+    public function login() {
+    	header("Access-Control-Allow-Origin: *");
+		//接受数据
+		$name = $_POST['name'];
+		$md5passwd = md5($_POST['passwd']);
+//      //接受返回的数据  
+		 $data['user'] = $this->login_Models->selectData($name);
+//		 var_dump($data);
+		//当前值加密
+//	 	 $passmd = md5($passwd);
+        //提取数据库
+	     $passvalue = $data['user'][0]['passwd'];
+	     $nameId = $data['user'][0]['id'];
+		//判断密码是否相等
+		 if($md5passwd==$passvalue){
+//	 	 $newdata = array(
+//	 	                   'id' => $nameId,
+//                         'name'  => $name
+//                     );
+//		$this->session->set_userdata($newdata);		   
+		 	echo "1";
+		//将键值付给name变量	 
+//		$name = $this->session->userdata('username');
+		 }else{
+		 	echo "2";
+		 }
+
+	}
 
 
 }

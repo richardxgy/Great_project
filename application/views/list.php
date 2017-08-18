@@ -1,7 +1,6 @@
 <?php
-//	var_dump ($lists);
+defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<!--再添加一个二级分类表，然后表的联立：美食表和二级分类表联立，页面分类遍历分类表-->
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,8 +10,8 @@
     <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>
-    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" ></script>-->
+    <!--<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>-->
     <title>分类列表页面</title>
 </head>
 <body>
@@ -61,8 +60,8 @@
     	/*二级检索*/
     	var isbit=false;
    		$('.nav').on('click','li',function(){
-   			$biaoname=$('.biaoname').html();
-   			$fenleiname=$('.fenleiname').html();
+   			var $biaoname=$('.biaoname').html();
+   			var $fenleiname=$('.fenleiname').html();
 			$('li').attr('class','')
 			$(this).attr('class','active')
 		
@@ -86,14 +85,13 @@
 							$('#list'+mydata.chooselist[i].id).html('<div class="name">'+mydata.chooselist[i].name+'</div><div class="fenlei1">'+mydata.chooselist[i].fenlei1+'</div><div class="price">'+mydata.chooselist[i].price+'</div><div class="xiaoliang">'+mydata.chooselist[i].xiaoliang+'</div>')
 						}
 					}
-   					
    				}
    			});
    		})
    		/*排序*/
-    	$sortboolen=false;
+    	var $sortboolen=false;
     	$('.paixu').on('click','li',function(){
-    		$biaoname=$('.biaoname').html();
+    		var $biaoname=$('.biaoname').html();
 //  		$fenleiname=$('.fenleiname').innerHTML;
     		$sortboolen=!$sortboolen;
 	    	$sortby=$(this).context.id;
