@@ -51,7 +51,7 @@
 $url = base_url() . "/images/";
 foreach ($shop as $value) {
     echo '
-        <thead class="row" >
+        <thead class="row" id="'.$value['id'].'">
         <td class="col-md-4 col-xs-3">
             <div class="row">
                 <input type="checkbox" class="col-md-1 col-xs-2" >
@@ -61,13 +61,13 @@ foreach ($shop as $value) {
 
             </div>
         </td>
-        <td class="col-md-1 col-xs-1">￥'.$value['price'].'</td>
-        <td class="col-md-1 col-xs-1 row">
-            <button class="col-md-1 col-xs-1 hidden-xs" >-</button>
-            <input type="text" value="'.$value['number'].'" class="col-md-4 col-xs-12" style="padding: 1px">
-            <button class="col-md-1 col-xs-1 hidden-xs">+</button>
+        <td class="col-md-1 col-xs-1" >￥<span id="price'.$value['id'].'">'.$value['price'].'</span></td>
+        <td class="col-md-1 col-xs-1 row" id="td'.$value['id'].'" onclick="change_number(event)">
+            <button class="col-md-1 col-xs-1 hidden-xs" value="-"  id="'.$value['id'].'">-</button>
+            <input type="text" value="'.$value['number'].'" class="col-md-4 col-xs-12" style="padding: 1px" id="ipt'.$value['id'].'">
+            <button class="col-md-1 col-xs-1 hidden-xs" value="+"  id="'.$value['id'].'">+</button>
         </td>
-        <td class="col-md-1 col-xs-1">￥'.$value['amount'].'</td>
+        <td class="col-md-1 col-xs-1" >￥<span id="amt'.$value['id'].'">'.$value['amount'].'</span></td>
         <td class="col-md-1 col-xs-1 hidden-xs"><p>移入收藏夹</p>
             <p >删除</p></td>
         </thead>
@@ -90,6 +90,8 @@ foreach ($shop as $value) {
 <hr>
 
 <script type="text/javascript" src="<?php echo base_url() ?>js/shoppingCar.js"></script>
-
+<script type="text/javascript">
+    var url2 = "<?php echo site_url('shoppingCar_Controllers/getAjaxData')?>";
+</script>
 </body>
 </html>
