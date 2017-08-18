@@ -16,14 +16,18 @@
     <title>分类列表页面</title>
 </head>
 <body>
-	<div class='main' ng-app='myapp' ng-controller='mycontrol'>
+	<div class='main'>
+				<?php 
+						echo '<div class="biaoname" style="display:none">'.$biaoname.'</div>';
+						echo '<div class="fenleiname" style="display:none">'.$fenleiname.'</div>';
+				?>
 		<div class="nav">
 			<ul class="list">
-				<li>分类</li>
+				<li class="active">分类</li>
 				<?php
-//					foreach($leibies as $leibie){
-//						echo '<li id='.$leibie['id'].'>'.$leibie['name'].'</li>';
-//					}
+					foreach($leibies as $leibie){
+							echo '<li id="'.$leibie['id'].'">'.$leibie['fenleiname'].'</li>';
+					}
 				?>
 			</ul>
 		</div>
@@ -41,11 +45,11 @@
 		<div class="content">
 			<?php
 				foreach($lists as $list){
-					echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6" id='.$list['id'].'>
-							<div>'.$list['name'].'</div>
-							<div>'.$list['fenlei1'].'</div>
-							<div>'.$list['price'].'</div>
-							<div>'.$list['xiaoliang'].'</div>
+					echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 idname" id='.$list['id'].'>
+							<div class="name">'.$list['name'].'</div>
+							<div class="fenlei1">'.$list['fenlei1'].'</div>
+							<div class="price">'.$list['price'].'</div>
+							<div class="xiaoliang">'.$list['xiaoliang'].'</div>
 						</div>';
 				}
 			?>
@@ -54,27 +58,85 @@
 	<link href="<?php echo base_url() ?>/css/list.css" rel="stylesheet" type="text/css"/>
     <!--<script type="text/javascript" src="<?php echo base_url() ?>/js/list.js"></script>-->	
     <script type="text/javascript">
-    	$sortboolen=false;
-    	$('.paixu').on('click','li',function(){
-    		$sortboolen=!$sortboolen;
-    		$sortby=$(this).context.id;
-    		var url="<?php echo site_url('list_Controllers/sort')?>"
-    		
+    	/*二级检索*/
+    	var isbit=false;
+   		$('.nav').on('click','li',function(){
+   			$biaoname=$('.biaoname').html();
+   			$fenleiname=$('.fenleiname').html();
 			$('li').attr('class','')
 			$(this).attr('class','active')
-			
-			$.ajax({
-				type:"get",
-				url:url,
-				data:{
-					sortby:$sortby,
-					sortboolen:$sortboolen
-				},
-				success:function(data){
-					console.log(data)
+		
+   			isbit=!isbit;
+   			var url="<?php echo site_url('list_Controllers/choose')?>"
+   			$.ajax({
+   				type:"get",
+   				url:url,
+   				data:{
+   					fenleiname:$fenleiname,
+   					biaoname:$biaoname,
+   					id:$(this).context.id
+   				},
+   				success:function(data){
+   					if(data){
+						let mydata =$.parseJSON(data);
+						$('.content').html('');
+						for(let i = 0;i<mydata.chooselist.length;i++){
+							var div=$('<div></div>').attr('id','list'+mydata.chooselist[i].id).attr('class',"col-lg-3 col-md-3 col-sm-6 col-xs-6 idname");
+							$('.content').append(div);
+							$('#list'+mydata.chooselist[i].id).html('<div class="name">'+mydata.chooselist[i].name+'</div><div class="fenlei1">'+mydata.chooselist[i].fenlei1+'</div><div class="price">'+mydata.chooselist[i].price+'</div><div class="xiaoliang">'+mydata.chooselist[i].xiaoliang+'</div>')
+						}
+					}
+   					
+   				}
+   			});
+   		})
+   		/*排序*/
+    	$sortboolen=false;
+    	$('.paixu').on('click','li',function(){
+    		$biaoname=$('.biaoname').html();
+//  		$fenleiname=$('.fenleiname').innerHTML;
+    		$sortboolen=!$sortboolen;
+	    	$sortby=$(this).context.id;
+			$('li').attr('class','')
+			$(this).attr('class','active')
+			if(!isbit){	
+				var url="<?php echo site_url('list_Controllers/sort')?>"
+				$.ajax({
+					type:"get",
+					url:url,
+					data:{
+						biaoname:$biaoname,
+//						fenleiname:$fenleiname,
+						sortby:$sortby,
+						sortboolen:$sortboolen
+					},
+					success:function(data){
+						if(data){
+							let mydata =$.parseJSON(data);
+							$('.content').html('');
+							for(let i = 0;i<mydata.lists.length;i++){
+								var div=$('<div></div>').attr('id','list'+mydata.lists[i].id).attr('class',"col-lg-3 col-md-3 col-sm-6 col-xs-6 idname");
+								$('.content').append(div);
+								$('#list'+mydata.lists[i].id).html('<div class="name">'+mydata.lists[i].name+'</div><div class="fenlei1">'+mydata.lists[i].fenlei1+'</div><div class="price">'+mydata.lists[i].price+'</div><div class="xiaoliang">'+mydata.lists[i].xiaoliang+'</div>')
+							}
+						}
+					}
+				});
+			}else{
+				var arr = [];
+				for(let i = 0 ;i<$('.content').children().length;i++){
+						arr.push($('.content').children()[i]);
 				}
-			});
+				if($sortboolen){
+					var arr2= arr.reverse()
+					$('.content').append(arr2);
+				}else{
+					$('.content').append(arr);
+				}
+				
+			}
 		})
+
     </script>
 </body>
 </html>
