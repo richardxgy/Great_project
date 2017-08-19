@@ -1,6 +1,7 @@
 *{      /*清楚原有的格式*/
     padding: 0;
     margin: 0;
+    border:0;
     list-style-type:none;
 }
 a,img{border:0;}
@@ -19,6 +20,7 @@ input.add,input.min{width:15px}
     width:100%;
     height:25px;
     background-color: rgba(175,135,232,0.06);
+    font-size: 14px;
 }
 .cjh{
     color: #4F5155;
@@ -85,28 +87,6 @@ input.add,input.min{width:15px}
 /*.theme-options li.selected a{ border:2px solid #ff6600; padding:0 5px;}*/
 .theme-options li.selected i{ display:block;}
 
-/*公共*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
-    font-family: arial,"Lantinghei SC","Microsoft Yahei";
-}
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, main {
@@ -160,4 +140,18 @@ h5{float: right;color: #666;padding-right:20px;}
 
 input.add,input.min{width:15px}
 .last{border-right:none !important;}
+
+#ullist{
+	float: left;
+	text-align: center;
+	width: 100%;
+	left:auto;
+	right:auto;
+}
+
+#ullist li{
+	width:33.333%;
+	border-top: 2px solid #F03726;
+	float: left;
+}
 
