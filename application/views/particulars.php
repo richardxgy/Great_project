@@ -266,7 +266,7 @@
 </dd>
 </dl>
 <div class="clear"></div>
-<!--活动	-->
+<!--活动是	-->
 <div class="shopPromotion gold">
     <div class="hot">
         <dt class="tb-metatit">商品优惠</dt>
