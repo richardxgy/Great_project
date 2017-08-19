@@ -60,12 +60,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	/*二级检索*/
     	var isbit=false;
    		$('.nav').on('click','li',function(){
+   			/*获得表名，获得分类表名，以及css样式*/
    			var $biaoname=$('.biaoname').html();
    			var $fenleiname=$('.fenleiname').html();
 			$('li').attr('class','')
 			$(this).attr('class','active')
-		
-   			isbit=!isbit;
+   			isbit=true;
    			var url="<?php echo site_url('list_Controllers/choose')?>"
    			$.ajax({
    				type:"get",
@@ -131,7 +131,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				}else{
 					$('.content').append(arr);
 				}
-				
 			}
 		})
 
