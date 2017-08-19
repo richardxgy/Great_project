@@ -17,6 +17,7 @@ class list_Models extends CI_Model {
 		$result=$this->db->query($sql);
 		header("Access-Control-Allow-Origin: *");
 		$list = $result->result_array();
+		/*获得数据长度*/
 		$length = count($list);
 		if($boolen=='true'){
 			for($i = 0;$i<$length-1;$i++){
