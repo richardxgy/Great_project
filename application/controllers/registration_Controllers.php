@@ -22,6 +22,7 @@ class registration_Controllers extends CI_Controller{
     	$this->load->view('registration');
     }
     public function register(){
+    	header("Access-Control-Allow-Origin: *");
     	$data['user']=$this->registration_Models->insertData($_POST['name'],md5($_POST['passwd']));
     	if(!empty($data) ){
 			echo "success";
