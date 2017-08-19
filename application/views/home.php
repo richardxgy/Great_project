@@ -356,17 +356,209 @@
             <h3>秒杀<small>&nbsp;&nbsp;&nbsp;每期活动 优惠享不停</small></h3>
             <div id="msimgdivs"></div>
             <div id="msimgdiv">
-                <img  src="<?php echo base_url() ?>/images/activity.jpg">
+                <a href="#"><img  src="<?php echo base_url() ?>/images/activity.jpg"></a>
                 <button class="btn btn-default" id="msbut1">节日礼品最佳问候</button>
-                <img  src="<?php echo base_url() ?>/images/activity1.jpg">
+                <a href="#"><img  src="<?php echo base_url() ?>/images/activity1.jpg"></a>
                 <button class="btn btn-default" id="msbut2">冰爽降价满99减30</button>
-                <img  src="<?php echo base_url() ?>/images/activity2.jpg">
+                <a href="#"><img  src="<?php echo base_url() ?>/images/activity2.jpg"></a>
                 <button class="btn btn-default" id="msbut3">独特味道挑战味蕾</button>
-                <img  src="<?php echo base_url() ?>/images/activity3.jpg">
+                <a href="#"> <img  src="<?php echo base_url() ?>/images/activity3.jpg"></a>
                 <button class="btn btn-default" id="msbut4">部分爆款直降</button>
             </div>
         </div>
     </div>
+
+<!--    品质生活-->
+    <div id="pzdiv">
+        <h2>- - - - - - - - - - - - - - - - - - - - - 品质生活- - - - - - - - - - - - - - - - - - - - - </h2>
+
+        <div id="pzdiv1" class="container">
+            <div class="row rowdiv">
+                <div class="col-lg-3 pzdiro" >
+                    <img  src="<?php echo base_url() ?>/images/pz01.jpg" id="pzimg1"  >
+                    <a href="#">
+                    <div class="pzdi01 asspzdiv">
+                        <h2>
+                           <p>新品首发</p>
+                        </h2>
+                        <h5>OPPO特别版开箱上手</h5>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 pzdiro">
+                    <img  src="<?php echo base_url() ?>/images/pz02.jpg" id="pzimg2">
+                    <a href="#">
+                    <div class="pzdi02 asspzdiv">
+                        <h2>
+                            <p>潮流逛</p>
+                        </h2>
+                        <h5>时尚弄潮儿的狂想</h5>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row rowdiv">
+                <div class="col-lg-3 pzdiro">
+                    <img  src="<?php echo base_url() ?>/images/pz03.jpg" id="pzimg3">
+                    <a href="#">
+                    <div class="pzdi03 asspzdiv" >
+                        <h2>
+                            <p>奢侈大牌</p>
+                        </h2>
+                        <h5>尽享品质生活</h5>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 pzdiro">
+                    <img  src="<?php echo base_url() ?>/images/pz04.jpg" id="pzimg4">
+                    <div class="pzdi04 asspzdiv" >
+                        <h2>
+                            <p>智能生活</p>
+                        </h2>
+                        <h5>智能潮流发烧不停</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row rowdiv">
+                <div class="col-lg-3 pzdiro">
+                    <img  src="<?php echo base_url() ?>/images/pz05.jpg" id="pzimg5">
+                    <a href="#">
+                    <div class="pzdi05 asspzdiv" >
+                        <h2>
+                            <p>生鲜超市</p>
+                        </h2>
+                        <h5>精选特价天天好货</h5>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 pzdiro">
+                    <img  src="<?php echo base_url() ?>/images/pz06.jpg"  id="pzimg6">
+                    <a href="#">
+                    <div class="pzdi06 asspzdiv" >
+                        <h2>
+                            <p>白条商城</p>
+                        </h2>
+                        <h5>最高12期免息</h5>
+                    </div>
+                    </a>
+                </div>
+
+
+                <div class="col-lg-1 pzdiro" >
+
+                    <img  src="<?php echo base_url() ?>/images/pz07.jpg"  id="pzimg7" >
+                     <a href="#">
+                    <div class="pzdi07 " id="pzssdiv1">
+                            <h2>
+                                <p>设计师推荐</p>
+                            </h2>
+                            <h5>家居超级品牌日</h5>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-1 pzimgs"  >
+                    <img  src="<?php echo base_url() ?>/images/pz08.jpg"  id="pzimg8">
+                    <a href="#">
+                    <div class="pzdi08 " id="pzssdiv2">
+                        <h2>
+                            <p>全球Go</p>
+                        </h2>
+                        <h5>全球顶尖好货</h5>
+                    </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+<!--        品质轮播模块-->
+        <div id="pzlunbo">
+            <div id="pzbt">
+               <p>达人直播</p>
+                <span>精彩看不停&nbsp;&nbsp;★</span>
+            </div>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner pzlbdiv" role="listbox">
+                    <!--                    01-->
+                    <div class="item active">
+                        <img   src="<?php echo base_url() ?>/images/pzlb001.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <!--                    02-->
+                    <div class="item">
+                        <img  src="<?php echo base_url() ?>/images/pzlb002.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <!--                    03-->
+                    <div class="item">
+                        <img  src="<?php echo base_url() ?>/images/pzlb003.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <!--                    04-->
+                    <div class="item">
+                        <img  src="<?php echo base_url() ?>/images/pzlb004.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <!--                    05-->
+                    <div class="item">
+                        <img  src="<?php echo base_url() ?>/images/pzlb005.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+                    <!--                    06-->
+                    <div class="item">
+                        <img  src="<?php echo base_url() ?>/images/pzlb006.jpg">
+                        <div class="carousel-caption">
+                            ...
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
 
 
 

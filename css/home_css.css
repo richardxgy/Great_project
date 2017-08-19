@@ -13,6 +13,7 @@ body{margin:0;
     width:100%;
     font-size:12px;
     font-family: arial,"Lantinghei SC","Microsoft Yahei";
+    background: linear-gradient(to right, #ddfafa, #fae1f2);
 
 }
 /*头部部分*/
@@ -235,13 +236,13 @@ img, input {
     height: 480px;
     position: relative;
     top: 385px;
-    background-color: #f9ffef;
+    background: linear-gradient(to right, #ddfafa, #fae6cc);
 }
-.hh01{ position: absolute; left: 100px;}
-.hr01{ float: left; width: 70%; height: 6px; position: absolute; border-top: 1px #EDEAE6 solid;
-    border-bottom:1px #EDEAE6 solid; top: 30px; left: 250px; }
-.hr02{ float: left; width: 70%; height: 6px; position: absolute; border-top: 1px #EDEAE6 solid;
-    border-bottom:1px #EDEAE6 solid; top: 40px; left: 250px; }
+.hh01{ position: absolute; left: 65px;}
+.hr01{ float: left; width: 80%; height: 6px; position: absolute; border-top: 1px #C1C1C1 solid;
+    border-bottom:1px #C1C1C1 solid; top: 30px; left: 220px; }
+.hr02{ float: left; width: 80%; height: 6px; position: absolute; border-top: 1px #C1C1C1 solid;
+    border-bottom:1px #C1C1C1 solid; top: 40px; left: 220px; }
 
 .prod{ width: 100%;
     height: 331px;
@@ -308,7 +309,7 @@ img, input {
     height: 410px;
     position: relative;
     top: 365px;
-    background-color: pink;
+    background: linear-gradient(to right, #ddfafa, #faeae5);
 }
 
 #msimgdivs{
@@ -370,7 +371,201 @@ img, input {
     opacity: 0.9;
 }
 
+/*品质生活*/
+#pzdiv{
+    width: 100%;
+    height: 550px;
 
+    background: linear-gradient(to right, #ddfafa, #fae1f2);
+    position: relative;
+    top: 365px;
+}
+#pzdiv h2{
+    position: absolute;
+    left:15%;
+    color: #7B7B7B;
+}
+
+#pzdiv1{
+    width: 92%;
+    background: linear-gradient(to right, #ddfafa, #faeae5);
+    height:550px;
+    position: relative;
+    top:65px;
+    left: 0px;
+    padding-left: 30px;
+}
+
+.rowdiv div{
+    width: 380px;
+    overflow: hidden;
+    margin-bottom: 14px;
+
+
+}
+.pzimgs{
+   position: absolute;
+    right: -130px;
+}
+
+
+
+.rowdiv div div{
+    width: 140px;
+    height: 170px;
+    opacity: 0.9;
+    position: absolute;
+    top: 0px;
+}
+.pzdiro{
+    overflow: hidden;
+    position: relative;
+
+}
+.pzimgs{
+    overflow: hidden;
+}
+.rowdiv div img{
+    position: relative;
+}
+
+.pzdi01{  background-color:  #73BC90; }
+.pzdi02{  background-color:  #DDD27A; }
+.pzdi03{  background-color:  #5D5467; }
+.pzdi04{  background-color:  #498C95; }
+.pzdi05{  background-color:  #D88E28; }
+.pzdi06{  background-color:  #876450; }
+.pzdi07{  background-color:  #B04942; }
+.pzdi08{  background-color:  #6E356E; }
+
+.pzdi02 h5{  margin-left: 10px;  }
+.pzdi03 h5{  margin-left: 28px;  }
+.pzdi04 h5{  margin-left: 12px;  }
+.pzdi05 h5{  margin-left: 10px;  }
+.pzdi06 h5{  margin-left: 28px;  }
+
+
+.pzdiro .asspzdiv h2{
+    font-weight:bold;
+    font-size: 18px;
+    color: white;
+    border-top: 3px white solid;
+    border-bottom: 3px white solid;
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    top: 25px;
+}
+.asspzdiv h5{
+    position: absolute;
+    color: white;
+    top: 100px;
+    text-align:center;
+}
+.asspzdiv h2 p{
+    color: white;
+    text-align:center;
+    line-height: 43px;
+}
+/*品质右下两个小模块*/
+#pzssdiv1{
+    width: 200px;
+    height: 75px;
+    position: absolute;
+    top: 95px;
+}
+#pzssdiv1 h2{
+    font-weight:bold;
+    font-size: 16px;
+    color: white;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    left: 48px;
+    top:-7px;
+}
+#pzssdiv1 h2 p{
+    color: white;
+    text-align:center;
+    line-height: 35px;
+}
+#pzssdiv1 h5{
+    position: absolute;
+    color: white;
+    top: 45px;
+    left: 50px;
+}
+
+
+
+#pzssdiv2{
+    width: 200px;
+    height: 75px;
+    position: absolute;
+    top: 95px;
+}
+#pzssdiv2 h2{
+    font-weight:bold;
+    font-size: 16px;
+    color: white;
+    border-top: 2px white solid;
+    border-bottom: 2px white solid;
+    width: 100px;
+    height: 35px;
+    position: absolute;
+    left: 48px;
+    top:-7px;
+}
+#pzssdiv2 h2 p{
+    color: white;
+    text-align:center;
+    line-height: 35px;
+}
+#pzssdiv2 h5{
+    position: absolute;
+    color: white;
+    top: 45px;
+    left: 58px;
+}
+
+
+/*品质轮播模块*/
+#pzlunbo{
+    width: 420px;
+    height: 354px;
+    /*background: linear-gradient(to right, #ddfafa, #fae1f2);*/
+    background-color: #32282E;
+    float: left;
+    position: absolute;
+    top: 65px;
+    right: 87px;
+    overflow: hidden;
+}
+
+.pzlbdiv .item img{
+    width: 420px;
+    height: 336px;
+    position: relative;
+    top: 30px;
+
+}
+
+#pzbt p{
+    color: white;
+    font-size:20px;
+    position: absolute;
+    margin-left: 20px;
+    top:10px;
+
+}
+#pzbt span{
+    color: white;
+    position: relative;
+    top:20px;
+    left: 300px;
+}
 
 
 

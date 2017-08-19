@@ -16,6 +16,7 @@ $(".nav-ul").delegate("li","mouseenter",function (){
     //console.log(666)
 
 });
+
 $(".nav-ul").delegate("li","mouseleave",function (){
     var con = $(this).context.id;
     $("#"+con).animate({"top":'0'},400)
@@ -80,5 +81,32 @@ $(".prod").delegate("div","mouseleave",function (){
 });
 
 
+//品质生活
+$(".rowdiv").delegate("div","mouseenter",function (){
+    //console.log($(this).context.id)
+    var con = $(this).context.children
+    //图片的id
+    var imgconid = con[0].id
+    if(imgconid=="pzimg8"||imgconid=="pzimg7"){
+        $("#"+imgconid).animate({"top":'-10'},200)
+    }else {
+        $("#"+imgconid).animate({"right":'-10'},200)
+    }
 
+    //console.log(666)
+
+});
+
+$(".rowdiv").delegate("div","mouseleave",function (){
+    var con = $(this).context.children
+    //图片的id
+    var imgconid = con[0].id
+    if(imgconid=="pzimg8"||imgconid=="pzimg7"){
+        $("#"+imgconid).animate({"top":'0'},200)
+    }else {
+        $("#"+imgconid).animate({"right":'0'},200)
+    }
+
+    //console.log(777)
+});
 
