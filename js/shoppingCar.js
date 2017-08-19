@@ -26,6 +26,8 @@ function change_number(event) {
         } else {
             if (goods_number > 0) {
                 goods_number--;
+            }else{
+                return false;
             }
 
         }
@@ -91,14 +93,10 @@ function delete_goods(event) {
 function check(event) {
     var id = event.target.id;
     var goods_id = id.split('_')[1];
-
+    var bol = event.target.value;
     var amount_id = "#amt" + goods_id;
     var goods_amount = parseInt($(amount_id).text());
-
-
-    var bol = event.target.value;
     if (bol == 0) {
-
         fm(goods_amount);
         event.target.value = 1;
     } else {
@@ -106,8 +104,6 @@ function check(event) {
         fm(goods_amount);
         event.target.value = 0;
     }
-
-
 }
 //计算总金额
 function fm(goods_amount, goods_price) {
@@ -122,13 +118,41 @@ function fm(goods_amount, goods_price) {
     }
     $("#total").html(total)
 
-
 }
 
 //全选
 
-function check_all() {
-    console.log(total)
+function check_all(event) {
+    console.log(event.target.checked);
+    var ckd = event.target.checked;
+    var arr = $("thead");
+    if (ckd) {
+        for (var i = 1; i < arr.length; i++) {
+            var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
+            check_box.value = 1;
+            check_box.checked = true;
+            var id = check_box.id;
+            var goods_id = id.split('_')[1];
+            var bol = check_box.value;
+            var amount_id = "#amt" + goods_id;
+            var goods_amount = parseInt($(amount_id).text());
+            fm(goods_amount);
+
+        }
+    } else {
+        for (var i = 1; i < arr.length; i++) {
+            var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
+            check_box.value = 0;
+            check_box.checked = false;
+            var id = check_box.id;
+            var goods_id = id.split('_')[1];
+            var bol = check_box.value;
+            var amount_id = "#amt" + goods_id;
+            var goods_amount = 0-parseInt($(amount_id).text());
+
+            fm(goods_amount);}
+    }
+
 }
 /*
  var vn=new Vue({
