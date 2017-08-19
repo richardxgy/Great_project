@@ -1,4 +1,7 @@
+<?php header('Access-Control-Allow-Origin: *'); ?>
+	
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Administrator
@@ -15,10 +18,27 @@ class particulars_Controllers extends CI_Controller{
         //添加名叫helper的类库：
         $this->load->helper('url');
         //添加名叫model的类库：
-//        $this->load->model('particulars_Models');
+          $this->load->model('particulars_Models');
     }
+	
+	function getshopdata(){
+	   
+//	   var_dump($_GET['id']);
+//	   $id= $this->uri->segment(4);
+//       var_dump($id);
+		$data = $this->particulars_Models->getxiangxi($_GET['id']);
+      
+	     
+//      $this->load->view('particulars',$data);
+         
+//    var_dump($data);
+        echo json_encode($data);
+		
+		
+	}
+		
     public function index()
     {
-        $this->load->view('welcome_message');
+        $this->load->view('particulars');
     }
 }
