@@ -189,6 +189,9 @@ input.add,input.min{width:15px}
 	width: 40px;
 	height: 40px;
 	background: #E0690C;
-	
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
 	opacity: 0.7;
+
 }
