@@ -28,5 +28,11 @@ class houtaiindex_Models extends CI_Model {
 		header("Access-Control-Allow-Origin: *");
 		echo $query;
 	}
+	public function show(){
+		$sql='select * from listproduce';
+		$result=$this->db->query($sql);
+		header("Access-Control-Allow-Origin: *");
+		return $result->result_array();
+	}
 
 }
