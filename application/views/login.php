@@ -90,44 +90,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				</p>
 			</div>
 		</div>
-
-		<script>
-			$('#login').click(function() {
-				var $name = $('#name').val();
-				var $passwd = $('#passwd').val();
-				var url = "<?php echo site_url('login_Controllers/login') ?>";
-				$.ajax({
-					data: {
-						name: $name,
-						passwd: $passwd
-					}, 
-					type: "POST", //发送的方式
-					url: url, //url地址
-					error: function(data) { //处理出错的信息
-						document.write(data);
-					},
-					success: function(data) { //处理正确时的信息
-						if(data == '1') {
-							alert('登录成功！');
-							var url = "<?php echo site_url('home_Controllers')?>";
-//							window.location.href = url;
-							$.ajax({
-								type:"get",
-								url:url,
-								data:{
-									name: $name
-								},
-								success:function(data){
-									window.location.href = url;
-								}
-							});
-						}else if(data == '2'){
-							alert('账号或密码错误请重新输入！');
-						}
-					}
-				});
-			});
+		<script type="text/javascript">
+			var url1 ="<?php echo site_url('login_Controllers/login') ?>";
+			var url2 = "<?php echo site_url('home_Controllers')?>";
 		</script>
+		<script src="<?php echo base_url() ?>/js/login.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 	</html>
