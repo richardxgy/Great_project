@@ -91,8 +91,8 @@ flex: 1 1 0%;line-height: 16px;cursor: pointer;}
 /*购物车*/
 
 .tb-btn a {margin-right: 0px;float: left;overflow: hidden; position: relative;width:100%; height: 30px; line-height: 30px;background-color: #FFEDED;
-color:#F03726;font-size: 14px;text-align: center;}
-.tb-btn-basket a {background-color:#F03726;color: #FFF;}
+color:#ff6600;font-size: 14px;text-align: center;}
+.tb-btn-basket a {background-color:#ff6600;color: #FFF;}
 
 .pay li,.pay .pay-opt{float:left; margin-top:15px;width:33.33% ;height:30px ;}
 .pay span{display:inline-block;width: 50%;float: left;font-size:14px ;background:#fff ;line-height:30px ;cursor: pointer;}
@@ -328,7 +328,7 @@ div.zoomMask { position:absolute; background:url(../images/mask.png)repeat scrol
 .browse li img{width:100% ;}
 .browse li .p-price strong {color: #E4393C;font-weight: 600;}
 /*导航固定*/
-ul.am-tabs-nav.am-nav.am-nav-tabs {left:20% ;max-width:960px ;background: #F5F5F5;right: 40px;}
+ul.am-tabs-nav.am-nav.am-nav-tabs {left:20% ;max-width:1760px ;background: #F5F5F5;right: 40px;}
 .am-nav-tabs > li.am-active {border-top: 2px solid #F03726;border-bottom: none;}
 
 /*评论*/
@@ -348,7 +348,7 @@ ul.am-tabs-nav.am-nav.am-nav-tabs {left:20% ;max-width:960px ;background: #F5F5F
 .clearfixRight {width: 700px;}
 
 /*导航固定*/
-ul.am-tabs-nav.am-nav.am-nav-tabs {left:auto;right:auto;width:960px ;}
+ul.am-tabs-nav.am-nav.am-nav-tabs {left:auto;right:auto;width:1760px ;}
 
 
 }
