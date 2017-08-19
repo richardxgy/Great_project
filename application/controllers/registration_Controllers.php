@@ -18,5 +18,15 @@ class registration_Controllers extends CI_Controller{
         //添加名叫model的类库：
         $this->load->model('registration_Models');
     }
+    public function index(){
+    	$this->load->view('registration');
+    }
+    public function register(){
+    	header("Access-Control-Allow-Origin: *");
+    	$data['user']=$this->registration_Models->insertData($_POST['name'],md5($_POST['passwd']));
+    	if(!empty($data) ){
+			echo "success";
+		}
+    } 
 
 }

@@ -11,5 +11,10 @@ class registration_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
+    function insertData($name,$passwd){
+    	$sql = 'insert into  user(name,passwd)values("'.$name.'","'.$passwd.'")';
+        $result = $this->db->query($sql);
+        return $result;
+    }
 
 }

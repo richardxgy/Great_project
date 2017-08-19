@@ -12,5 +12,14 @@ class login_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
+    function selectData($name) {
+    	header("Access-Control-Allow-Origin: *");
+		 $sql = 'SELECT id,passwd FROM user WHERE name = "'.$name.'"';
+		 //查询数据库
+		 $query = $this->db->query($sql);
+		 //以数组的形式返回查询结果
+		 return $query->result_array();
+	    
+	}
 
 }
