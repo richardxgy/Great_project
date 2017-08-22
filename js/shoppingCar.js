@@ -17,7 +17,7 @@ function change_number(event) {
     var goods_amount = $(amount_id).text();
     //选择框的ID
     var check_id = "#check_" + goods_id;
-    var bol = $(check_id).val();
+    var bol =$(check_id)["0"].checked;
     //改变商品数量
     if (goods_number >= 0) {
         if (btn_value == "+") {
@@ -51,7 +51,7 @@ function change_number(event) {
                     console.log("成功了");
                     $(input_id).val(goods_number);
                     $(amount_id).html(goods_amount);
-                    if (bol == 1) {
+                    if (bol) {
                         //改变数量并改变合计
                         goods_price = parseInt(goods_price);
                         if (btn_value == "+" && goods_number >= 0) {
@@ -93,18 +93,14 @@ function delete_goods(event) {
 function check(event) {
     var id = event.target.id;
     var goods_id = id.split('_')[1];
-    var bol = event.target.value;
+    var bol = event.target.checked;
     var amount_id = "#amt" + goods_id;
     var goods_amount = parseInt($(amount_id).text());
-    if (bol == 0) {
+    if (bol) {
         fm(goods_amount);
-        event.target.value = 1;
-        bol=1;
     } else {
         goods_amount = 0 - goods_amount;
         fm(goods_amount);
-        event.target.value = 0;
-        bol=0;
     }
 
 }
@@ -128,14 +124,13 @@ function fm(goods_amount, goods_price) {
 function check_all(event) {
     var ckd = event.target.checked;
     var arr = $("thead");
+    total=0;
     if (ckd) {
         for (var i = 1; i < arr.length; i++) {
             var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-            check_box.value = 1;
             check_box.checked = true;
             var id = check_box.id;
             var goods_id = id.split('_')[1];
-            var bol = check_box.value;
             var amount_id = "#amt" + goods_id;
             var goods_amount = parseInt($(amount_id).text());
             fm(goods_amount);
@@ -145,16 +140,14 @@ function check_all(event) {
     } else {
         for (var i = 1; i < arr.length; i++) {
             var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-            check_box.value = 0;
             check_box.checked = false;
             var id = check_box.id;
             var goods_id = id.split('_')[1];
-            var bol = check_box.value;
+
             var amount_id = "#amt" + goods_id;
             var goods_amount = 0-parseInt($(amount_id).text());
 
             fm(goods_amount);}
-        updata_bol(goods_id,bol)
     }
 
 }
