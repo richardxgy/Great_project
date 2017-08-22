@@ -9,7 +9,6 @@
 		<meta name="format-detection" content="telephone=no">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="Cache-Control" content="no-siteapp" />
-
 		<link rel="stylesheet" href="<?php echo base_url() ?>/css/mubancss/amazeui.min.css" />
 		<link href="<?php echo base_url() ?>/css/mubancss/dlstyle.css" rel="stylesheet" type="text/css">
 		<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -18,10 +17,6 @@
 	</head>
 
 	<body>
-		<!--<script type="text/javascript">
-        var base_url ="<?php echo site_url('paycontrollers')?>"
-    </script>-->
-
 		<div class="login-boxtitle">
 			<a href="home/demo.html"><img alt="" src="<?php echo base_url() ?>/images/logobig.png" /></a>
 		</div>
@@ -96,43 +91,11 @@
 					</p>
 				</div>
 			</div>
-
-			<script>
-				$('.tel').on('click', function() {
-					$('#name').attr('placeholder','请输入手机号')
-				})
-				$('.emall').on('click', function() {
-					$('#name').attr('placeholder','请输入邮箱账号')
-				})
-				$("#butn1").click(function() {
-					var name = $("#name").val();
-					var passwd = $("#passwd").val();
-					var passwordRepeat = $("#passwordRepeat").val();
-					if(name == '') {
-						alert('必填');
-					};
-					if(passwd !== passwordRepeat) {
-						alert('两次输入密码不一样')
-					};
-					$.ajax({
-						type: "post",
-						url: "<?php echo site_url('registration_Controllers/register')?>",
-						data: {
-							name: name,
-							passwd: passwd
-						},
-						error: function(data) { //处理出错的信息
-						},
-						success: function(data) { //处理正确时的信息
-							if(data == 'success') {
-								var url = "<?php echo site_url('login_Controllers')?>";
-								window.location.href = url;
-							}
-						}
-					});
-
-				})
+			<script type="text/javascript">
+				var url1= "<?php echo site_url('registration_Controllers/register')?>";
+				var url2 = "<?php echo site_url('login_Controllers')?>";
 			</script>
+			<script src="<?php echo base_url() ?>/js/registration.js" type="text/javascript" charset="utf-8"></script>
 
 	</body>
 

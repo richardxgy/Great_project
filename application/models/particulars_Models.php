@@ -12,5 +12,14 @@ class particulars_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
-
+    
+	
+	function getxiangxi($id)
+       {
+ 
+            $sql = 'Select * from  meishi  where id='.$id;
+            $query = $this->db->query($sql);
+           return $query->result_array();
+//         var_dump($query->result_array());
+	   }
 }

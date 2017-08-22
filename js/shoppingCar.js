@@ -17,7 +17,7 @@ function change_number(event) {
     var goods_amount = $(amount_id).text();
     //选择框的ID
     var check_id = "#check_" + goods_id;
-    var bol = $(check_id).val();
+    var bol = $(check_id)["0"].checked;
     //改变商品数量
     if (goods_number >= 0) {
         if (btn_value == "+") {
@@ -26,7 +26,7 @@ function change_number(event) {
         } else {
             if (goods_number > 0) {
                 goods_number--;
-            }else{
+            } else {
                 return false;
             }
 
@@ -51,7 +51,7 @@ function change_number(event) {
                     console.log("成功了");
                     $(input_id).val(goods_number);
                     $(amount_id).html(goods_amount);
-                    if (bol == 1) {
+                    if (bol) {
                         //改变数量并改变合计
                         goods_price = parseInt(goods_price);
                         if (btn_value == "+" && goods_number >= 0) {
@@ -93,17 +93,16 @@ function delete_goods(event) {
 function check(event) {
     var id = event.target.id;
     var goods_id = id.split('_')[1];
-    var bol = event.target.value;
+    var bol = event.target.checked;
     var amount_id = "#amt" + goods_id;
     var goods_amount = parseInt($(amount_id).text());
-    if (bol == 0) {
+    if (bol) {
         fm(goods_amount);
-        event.target.value = 1;
     } else {
         goods_amount = 0 - goods_amount;
         fm(goods_amount);
-        event.target.value = 0;
     }
+
 }
 //计算总金额
 function fm(goods_amount, goods_price) {
@@ -123,130 +122,84 @@ function fm(goods_amount, goods_price) {
 //全选
 
 function check_all(event) {
-    console.log(event.target.checked);
     var ckd = event.target.checked;
     var arr = $("thead");
+    total = 0;
     if (ckd) {
         for (var i = 1; i < arr.length; i++) {
             var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-            check_box.value = 1;
             check_box.checked = true;
             var id = check_box.id;
             var goods_id = id.split('_')[1];
-            var bol = check_box.value;
             var amount_id = "#amt" + goods_id;
             var goods_amount = parseInt($(amount_id).text());
             fm(goods_amount);
+
 
         }
     } else {
         for (var i = 1; i < arr.length; i++) {
             var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-            check_box.value = 0;
             check_box.checked = false;
             var id = check_box.id;
             var goods_id = id.split('_')[1];
-            var bol = check_box.value;
-            var amount_id = "#amt" + goods_id;
-            var goods_amount = 0-parseInt($(amount_id).text());
 
-            fm(goods_amount);}
+            var amount_id = "#amt" + goods_id;
+            var goods_amount = 0 - parseInt($(amount_id).text());
+
+            fm(goods_amount);
+        }
     }
 
 }
-/*
- var vn=new Vue({
- el: "#app",
- data: {
- total: 0,
- cb: false,
- list: [{bol: false, information: "《山海经》图文版", price: 152.00, number: 1, amount: 152.00},
- {bol: false, information: "《偷影子的人》", price: 27.00, number: 1, amount: 27.00},
- {bol: false, information: "瑞士军刀", price: 536.00, number: 1, amount: 536.00},
- {bol: false, information: "《解忧杂货铺》", price: 52.00, number: 1, amount: 52.00},
- {bol: false, information: "复古圆领毛衣", price: 298.00, number: 2, amount: 596.00}]
- },
- methods: {
- //            增加商品
- add: function (x, index) {
+//    更改表中的选中状态值
+function updata_bol(goods_id, bol) {
+    $.ajax({
+        data: {
+            goods_id: goods_id,
+            goods_bol: bol
+        },       //要发送的数据
+        type: "POST",           //发送的方式
+        url: url5, //url地址
+        error: function () { //处理出错的信息
+            console.log("出错了")
+        },
+        success: function (data1) {  //处理正确时的信息
+            console.log("更改成功了");
 
- var now_num = x.number;
- var price = x.price;
- now_num++;
+        }
+    });
+}
+//跳转到结算界面
+function settlement() {
+    /* var id_arr=[];
 
- var amount = this.fn(now_num, price);
+     var arr = $("thead");
+     for (var i = 1; i < arr.length; i++) {
+     var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
+     var id = check_box.id;
+     var goods_id = parseInt(id.split("_")[1]);
+     if (check_box.checked) {
+     id_arr.push(goods_id);
 
- this.list[index].number = now_num;
- this.list[index].amount = amount;
- if (x.bol) {
- this.fm(price)
- }
- },
- //            减少商品
- reduction: function (x, index) {
- var now_num = x.number;
- var price = x.price;
-
- if (now_num > 0) {
- now_num--;
- var amount = this.fn(now_num, price);
- this.list[index].number = now_num;
- this.list[index].amount = amount;
- if (x.bol) {
- this.fm(0 - price)
- }
-
- }
-
- },
- //            计算金额
- fn: function (now_num, price) {
- var amount = now_num * price;
- return amount;
- },
- //            选择
- check: function (x) {
- var amount = x.amount;
- if (!x.bol) {
- amount = 0 - amount;
- }
- this.fm(amount)
- },
- //            计算总金额
- fm: function (amount) {
-
- var all = this.total;
- all = all + amount;
-
-
- if (all >= 0) {
- this.total = all;
- } else {
- this.total = 0;
- }
-
-
- }
- ,
- //            删除
- del: function (x,index) {
- this.list.splice(index, 1)
- },
- //            全选
- chall: function () {
- var bool=this.cb;
- for (var i = 0; i < this.list.length; i++) {
- if(this.list[i].bol){
- this.list[i].bol=false;
- this.check(this.list[i]);
- }
- this.list[i].bol = this.cb;
- this.check(this.list[i]);
- }
- this.cb = bool;
-
- }
-
- }
-
- })*/
+     }
+     }
+     //向下一个页面传数
+     $.ajax({
+     data: {
+     goods_ids: "6666"
+     },       //要发送的数据
+     type: "get",           //发送的方式
+     traditional: true,
+     url: url6, //url地址
+     error: function () { //处理出错的信息
+     console.log("出错了")
+     },
+     success: function (data1) {  //处理正确时的信息
+     console.log("发送数据成功了");
+     console.log(data1)
+     //window.location.href = url4;
+     }
+     });
+     console.log(id_arr)*/
+}
