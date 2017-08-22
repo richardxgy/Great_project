@@ -1,5 +1,6 @@
 <?php
 /**
+ * 
  * Created by PhpStorm.
  * User: Administrator
  * Date: 2017/8/15
@@ -18,12 +19,10 @@ class home_Controllers extends CI_Controller{
         //添加名叫model的类库：
         $this->load->model('home_Models');
     }
-
+    
     public function index()
     {
-
         $this->load->view('home');
     }
-
 
 }
