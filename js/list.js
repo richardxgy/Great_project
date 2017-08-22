@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/8/15.
  */
-/*获得表名，获得分类表名，以及css样式*/
+		/*获得表名，获得分类表名*/
 	   	var $biaoname=$('.biaoname').html();
 	   	var $fenleiname=$('.fenleiname').html();
 /*选择商品*/
@@ -11,8 +11,11 @@
 				type:"get",
 				url:url4,
 				data:{
-					id:$this.context.id,
+					id:$(this).context.id,
 					biaoname:$biaoname
+				},
+				success:function(data){
+					window.location.href=url4;
 				}
 			});
 		})
@@ -22,8 +25,10 @@
    			if($(this).context.id=='fenlei'){
    				window.location.href=url1;
    			}else{
+   				/*css样式*/
 				$('li').attr('class','')
-				$(this).attr('class','active')
+				$(this).attr('class','active');
+				
 	   			isbit=true;
 	   			var url=url2;
 	   			$.ajax({
@@ -43,7 +48,7 @@
 							for(let i = 0;i<mydata.chooselist.length;i++){
 								var div=$('<div></div>').attr('id','list'+mydata.chooselist[i].id).attr('class',"col-lg-3 col-md-3 col-sm-6 col-xs-6 idname");
 								$('.content').append(div);
-								$('#list'+mydata.chooselist[i].id).html('<div class="name">'+mydata.chooselist[i].name+'</div><div class="fenlei1">'+mydata.chooselist[i].fenlei1+'</div><div class="price">'+mydata.chooselist[i].price+'</div><div class="xiaoliang">'+mydata.chooselist[i].xiaoliang+'</div>')
+								$('#list'+mydata.chooselist[i].id).html('<div class="name">'+mydata.chooselist[i].name+'</div><div class="fenlei1">'+mydata.chooselist[i].fenlei1+'</div><div class="price">价格：￥'+mydata.chooselist[i].price+'</div><div class="xiaoliang">销量：'+mydata.chooselist[i].xiaoliang+'</div>')
 							}
 						}
 	   				}
@@ -56,6 +61,7 @@
     	$('.paixu').on('click','li',function(){
     		$sortboolen=!$sortboolen;
 	    	$sortby=$(this).context.id;
+	    	/*css样式*/
 			$('li').attr('class','')
 			$(this).attr('class','active')
 			/*
@@ -78,7 +84,7 @@
 							for(let i = 0;i<mydata.lists.length;i++){
 								var div=$('<div></div>').attr('id','list'+mydata.lists[i].id).attr('class',"col-lg-3 col-md-3 col-sm-6 col-xs-6 idname");
 								$('.content').append(div);
-								$('#list'+mydata.lists[i].id).html('<div class="name">'+mydata.lists[i].name+'</div><div class="fenlei1">'+mydata.lists[i].fenlei1+'</div><div class="price">'+mydata.lists[i].price+'</div><div class="xiaoliang">'+mydata.lists[i].xiaoliang+'</div>')
+								$('#list'+mydata.lists[i].id).html('<div class="name">'+mydata.lists[i].name+'</div><div class="fenlei1">'+mydata.lists[i].fenlei1+'</div><div class="price">价格:￥'+mydata.lists[i].price+'</div><div class="xiaoliang">销量:'+mydata.lists[i].xiaoliang+'</div>')
 							}
 						}
 					}
