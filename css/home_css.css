@@ -116,6 +116,208 @@ img, input {
     display: none;
 }
 
+#erjidiv1 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv2 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv3 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv4 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv5 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv6 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv7 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv8 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv9 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+#erjidiv10 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+
+#erjidiv1 h4{color: red}
+#erjidiv1 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#r11{
+    width: 690px;
+    height: 200px;
+    position: absolute;
+    top: 0px;
+}
+.r12{
+    background-color: blue;
+    width: 690px;
+    height: 200px;
+}
+
+#erjidiv2 span{
+    padding: 3px;
+    color: #686166;
+    border: 0.5px #686166 solid;
+    border-radius: 3px;
+
+}
+
+#erjidiv2 h4{color: red}
+#erjidiv2 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv3 h4{color: red}
+#erjidiv3 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+#erjidiv4 h4{color: red}
+#erjidiv4 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv5 h4{color: red}
+#erjidiv5 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv6 h4{color: red}
+#erjidiv6 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv7 h4{color: red}
+#erjidiv7 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv8 h4{color: red}
+#erjidiv8 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv9 h4{color: red}
+#erjidiv9 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+#erjidiv10 h4{color: red}
+#erjidiv10 div{
+    display: block;
+    position: absolute;
+    left: 15px;
+    top:0px;
+    padding: 0;
+    width: 700px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*轮播图*/
 .lunbodiv{
     /*display: inline;*/
@@ -199,6 +401,7 @@ img, input {
 }
 #ycbqdiv ul{
     position: relative;
+    width: 200px;
     left: 5px;
 }
 #ycbqdiv ul li a{
@@ -567,18 +770,155 @@ img, input {
     left: 300px;
 }
 
+/*分类列表*/
+#fldiv{
+    width: 100%;
+    height: 400px;
+    position: relative;
+    top: 430px;
+
+}
+#fldiv h3{
+    margin-left: 60px;
+}
+
+#fldivs{
+    border-top: 2px black solid;
+    padding-top: 15px;
+    width: 90%;
+    position: relative;
+    left: 60px;
+}
+
+.flrowdiv{
+    position: relative;
+    left: 100px;
+    width: 90%;
+}
+
+.flrowdiv div{
+    position:relative ;
+    left: 0px;
+    width: 220px;
+    height: 320px;
+    margin-right: 20px;
+    background-color: white;
+
+}
+.flrowdiv div img{
+    position: absolute;
+    left: 0px;
+}
+
+.flrowdiv div p{
+    position: absolute;
+    top: 230px;
+}
+
+.flrowdiv div h4{
+    position: absolute;
+    top: 280px;
+    color: #fa5b1f;
+}
 
 
+/*底部文字*/
+#dbdiv{
+    width: 100%;
+    height: 420px;
+    background-color: #EAEAEA;
+}
+
+.dbrodiv{
+    width: 90%;
+    height: 70px;
+    position: absolute;
+    left: 100px;
+    border-bottom: 1px #C7CCD1 solid;
+
+}
+.dbrodiv div{
+
+    margin-right: 50px;
+}
+.dbrodiv div p{
+    font-size: 20px;
+    font-weight:bold;
+
+}
 
 
+#dbzjdiv{
+    position: absolute;
+    top:100px;
+
+}
+#dbzjdiv ul{
+    float: left;
+    margin-left: 50px;
+    margin-right: 100px;
 
 
+}
 
+#dbzjdiv ul h4{
+    color: black;
+    font-weight:bold;
+    font-size: 18px;
+}
+#dbzjdiv ul li{
+    margin-top: 3px;
+    color: #918888;
+}
+/*最下*/
+#dbzhdiv{
+    width: 90%;
+    border-top: 1px #C7CCD1 solid;
+    position: absolute;
+    left: 80px;
+}
 
+#dydiv ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
 
+#zjdiv {
+    width: 90%;
 
+    position: absolute;
+    top: 40px;
+    left: 80px;
+}
 
+#zjdiv ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
 
+#zjdiv2 {
+    width: 90%;
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+#zjdiv2 ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
 
-
+#zjdiv3 {
+    width: 90%;
+    position: absolute;
+    top: 90px;
+    left: 150px;
+}
+#zjdiv3 ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
 
