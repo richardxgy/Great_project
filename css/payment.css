@@ -1,0 +1,31 @@
+.nav1{
+    text-align: center;
+
+}
+.nav1 ul{
+    list-style-type: none;
+}
+.searchdiv{
+    height: 50px;
+}
+.searchinput{
+    height:80%;
+}
+.searchbutton{
+    height: 80%;
+}
+.list{
+    width: 80%;
+    margin:50px auto;
+    border: 1px solid #bbbbbb;
+}
+.list thead{
+    margin-bottom: 20px;
+
+}
+.address{
+    border: solid 1px black;
+}
+.order{
+    border: solid 1px black;
+}
