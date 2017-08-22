@@ -1,15 +1,27 @@
 /**
  * Created by Administrator on 2017/8/15.
  */
+/*获得表名，获得分类表名，以及css样式*/
+	   	var $biaoname=$('.biaoname').html();
+	   	var $fenleiname=$('.fenleiname').html();
+/*选择商品*/
+		$('.content').on('click','.idname',function(){
+			console.log($(this));
+			$.ajax({
+				type:"get",
+				url:url4,
+				data:{
+					id:$this.context.id,
+					biaoname:$biaoname
+				}
+			});
+		})
 /*分类检索*/
     	var isbit=false;
    		$('.nav').on('click','li',function(){
    			if($(this).context.id=='fenlei'){
    				window.location.href=url1;
    			}else{
-	   			/*获得表名，获得分类表名，以及css样式*/
-	   			var $biaoname=$('.biaoname').html();
-	   			var $fenleiname=$('.fenleiname').html();
 				$('li').attr('class','')
 				$(this).attr('class','active')
 	   			isbit=true;
@@ -42,7 +54,6 @@
    		/*排序*/
     	var $sortboolen=false;
     	$('.paixu').on('click','li',function(){
-    		var $biaoname=$('.biaoname').html();
     		$sortboolen=!$sortboolen;
 	    	$sortby=$(this).context.id;
 			$('li').attr('class','')

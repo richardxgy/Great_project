@@ -58,6 +58,7 @@
 		var url1="<?php echo site_url('list_Controllers') ?>";
 		var url2="<?php echo site_url('list_Controllers/choose')?>";
 		var url3 ="<?php echo site_url('list_Controllers/sort')?>";
+		var url4 = "<?php echo site_url('particulars_Controllers')?>";
 	</script>
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>/js/list.js"></script>
 </body>
