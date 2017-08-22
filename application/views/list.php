@@ -55,10 +55,19 @@
 	</div>
 	<link href="<?php echo base_url() ?>/css/list.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript">
+		
+			var biaoname=$('.biaoname').html();
 		var url1="<?php echo site_url('list_Controllers') ?>";
 		var url2="<?php echo site_url('list_Controllers/choose')?>";
 		var url3 ="<?php echo site_url('list_Controllers/sort')?>";
-		var url4 = "<?php echo site_url('particulars_Controllers')?>";
+		
+			$('.content').on('click','.idname',function(){
+			console.log($(this).context.id);
+			var id =$(this).context.id;
+			var url4 = "<?php echo site_url('particulars_Controllers/index')?>/id/"+id+"/bm/"+biaoname;
+			window.location.href=url4;
+			 })
+		
 	</script>
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>/js/list.js"></script>
 </body>

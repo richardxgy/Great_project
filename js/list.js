@@ -1,24 +1,26 @@
 /**
  * Created by Administrator on 2017/8/15.
  */
+
 		/*获得表名，获得分类表名*/
 	   	var $biaoname=$('.biaoname').html();
 	   	var $fenleiname=$('.fenleiname').html();
 /*选择商品*/
-		$('.content').on('click','.idname',function(){
-			console.log($(this));
-			$.ajax({
-				type:"get",
-				url:url4,
-				data:{
-					id:$(this).context.id,
-					biaoname:$biaoname
-				},
-				success:function(data){
-					window.location.href=url4;
-				}
-			});
-		})
+//		$('.content').on('click','.idname',function(){
+//			console.log($(this).context.id);
+//			$.ajax({
+//				type:"get",
+//				url:url4,
+//				data:{
+//					id:$(this).context.id,
+//					biaoname:$biaoname
+//				},
+//				success:function(data){
+//					console.log(data);
+//					window.location.href=url4;
+//				}
+//			});
+//		})
 /*分类检索*/
     	var isbit=false;
    		$('.nav').on('click','li',function(){

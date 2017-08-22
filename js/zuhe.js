@@ -15,7 +15,7 @@
 
 $("#ullist a").eq(0).addClass('cur')
   $('#ullist li').on('click','a',function(){
-  	console.log($(this));
+//	console.log($(this));
   	$(this).addClass('cur')
   	
 //		$(this).siblings('a').removeClass('cur');

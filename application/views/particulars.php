@@ -143,7 +143,7 @@
         <!--名称-->
         <div class="tb-detail-hd">
             <h1>
-                {{food.sname}}
+                {{food.name}}
             </h1>
 
             <p>{{food.scount}}</p>
@@ -329,16 +329,20 @@
  <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="xiqi">
    <div class="tw">
-	<li class="tw1" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"><img src="<? echo base_url()?>./images/tw1.jpg"  /></li>
-	<li class="tw2" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw2.jpg"  /></li>
-	<li class="tw3" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"><img src="<? echo base_url()?>./images/tw3.jpg"  /></li>
-	<li class="tw4"  data-move-x="-200px"><img src="<? echo base_url()?>./images/tw4.jpg" /></li>
-	<li class="tw5" data-move-y="200px" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw5.jpg"  /></li>
-	<li class="tw6" data-move-y="200px" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw6.jpg"  /></li>
+	<li class="tw1" ><img  src="<? echo base_url()?>./images/tw1.jpg"  height="500" /></li>
+	<li class="tw2 sm" ><img src="<? echo base_url()?>./images/tw2.jpg"  height="500"/></li>
+	<li class="tw3 sm"><img src="<? echo base_url()?>./images/tw3.jpg"   height="500"/></li>
+	<li class="tw4 sm" ><img src="<? echo base_url()?>./images/tw4.jpg"  height="500"/></li>
+	<li class="tw5 sm" ><img src="<? echo base_url()?>./images/tw5.jpg"   height="500"/></li>
+	<li class="tw6 sm"><img src="<? echo base_url()?>./images/tw6.jpg"  height="500"/></li>
 </div>
     	
     </div>
-    <div role="tabpanel" class="tab-pane" id="piji">2...</div>
+    <div role="tabpanel" class="tab-pane" id="piji">
+ 	  <div id="shopid" style="display: none;"><?php  echo $id; ?></div>
+ 	  <div id="shopbiao" style="display: none;"><?php  echo $bm; ?></div>
+           这里暂时用来存放隐藏的盒子，数据存储	
+    </div>
     <div role="tabpanel" class="tab-pane" id="xihuan">
  <div class="zzsc">
 	<li class="zzsc01"><img src="<? echo base_url()?>./images/zzsc01.jpg" width="667" height="332" /></li>
@@ -359,11 +363,20 @@
 <script type="text/javascript" src="<?php echo base_url()?>/js/mubanjs/jquery.smoove.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>/js/zuhe.js"></script>
 
-<script>	
-	 $('.tw').children().smoove({offset:'30%'});//在40%触发</script>
 <script>
-	console.log(window.location.href)
-	var id =1;
+	
+
+	 $('.sm').children().smoove({offset:'20%',
+
+	  
+	 
+	 rotateX:"10deg",moveZ:"-100px",moveY:"100px"
+	 });//在20%触发</script>
+<script>
+	
+	var id  = $('#shopid').html();
+	var biao  = $('#shopbiao').html();
+	console.log(biao)
     var app = angular.module('myApp', []);
     app.controller('siteCtrl', function($scope, $http) {
     	
@@ -372,7 +385,9 @@
 	$http({
 		method: 'GET',
 			params: {  
-                    "id":id  
+                    "id":id,
+                    "bm":biao
+                  
                 } ,   
 		
 		url: '<?php echo site_url('particulars_Controllers/getshopdata')?>'

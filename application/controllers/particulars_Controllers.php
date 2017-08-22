@@ -8,6 +8,7 @@
  * Date: 2017/8/15
  * Time: 18:48
  */
+ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class particulars_Controllers extends CI_Controller{
 
@@ -21,12 +22,24 @@ class particulars_Controllers extends CI_Controller{
           $this->load->model('particulars_Models');
     }
 	
+	public function index()
+    {
+         
+	    $id= $this->uri->segment(4);
+		$bm= $this->uri->segment(6);
+		$data['id'] =$id;
+		$data['bm'] =$bm;
+//		var_dump($bm);
+											;  
+        $this->load->view('particulars',$data);
+    }
+	
 	function getshopdata(){
 	   
 //	   var_dump($_GET['id']);
 //	   $id= $this->uri->segment(4);
 //       var_dump($id);
-		$data = $this->particulars_Models->getxiangxi($_GET['id']);
+		$data = $this->particulars_Models->getxiangxi($_GET['id'],$_GET['bm']);
       
 	     
 //      $this->load->view('particulars',$data);
@@ -37,8 +50,5 @@ class particulars_Controllers extends CI_Controller{
 		
 	}
 		
-    public function index()
-    {
-        $this->load->view('particulars');
-    }
+    
 }
