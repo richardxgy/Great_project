@@ -5,20 +5,21 @@
  * Created by Administrator on 2017/8/15.
  */
 // JavaScript Document
+
+
+
+
+
 //切换选项
- var urlstr = location.href;  
-  //alert(urlstr);  
-//var urlstatus=false;  
-//
-//if (!urlstatus) {$("#ullist a").eq(0).addClass('cur');
-//   urlstatus=true;
-//}
+ 
+
+$("#ullist a").eq(0).addClass('cur')
   $('#ullist li').on('click','a',function(){
-  	console.log(12)
+  	console.log($(this));
   	$(this).addClass('cur')
   	
-  		$(this).siblings('a').removeClass('cur');
- 
+//		$(this).siblings('a').removeClass('cur');
+  $(this).parent().siblings().children().removeClass("cur");
   	
   	
   })
