@@ -41,13 +41,13 @@
 			<!--
 				注意，这里的div请别改class名，如果要改的话，那么在$.ajax()中也需要把86行的html()里面的class名字改了.
 				-->
+				<!--<div class="fenlei1">分类：'.$list['fenlei1'].'</div>-->
 			<?php
 				foreach($lists as $list){
 					echo '<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 idname" id='.$list['id'].'>
 							<div class="name">'.$list['name'].'</div>
-							<div class="fenlei1">'.$list['fenlei1'].'</div>
-							<div class="price">'.$list['price'].'</div>
-							<div class="xiaoliang">'.$list['xiaoliang'].'</div>
+							<div class="price">价格:￥'.$list['price'].'</div>
+							<div class="xiaoliang">销量:'.$list['xiaoliang'].'</div>
 						</div>';
 				}
 			?>
@@ -58,6 +58,7 @@
 		var url1="<?php echo site_url('list_Controllers') ?>";
 		var url2="<?php echo site_url('list_Controllers/choose')?>";
 		var url3 ="<?php echo site_url('list_Controllers/sort')?>";
+		var url4 = "<?php echo site_url('particulars_Controllers')?>";
 	</script>
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>/js/list.js"></script>
 </body>

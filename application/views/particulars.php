@@ -329,12 +329,12 @@
  <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="xiqi">
    <div class="tw">
-	<li class="tw1"><img src="<? echo base_url()?>./images/tw1.jpg"  /></li>
-	<li class="tw2"><img src="<? echo base_url()?>./images/tw2.jpg"  /></li>
-	<li class="tw3"><img src="<? echo base_url()?>./images/tw3.jpg"  /></li>
-	<li class="tw4"><img src="<? echo base_url()?>./images/tw4.jpg" /></li>
-	<li class="tw5"><img src="<? echo base_url()?>./images/tw5.jpg"  /></li>
-	<li class="tw6"><img src="<? echo base_url()?>./images/tw6.jpg"  /></li>
+	<li class="tw1" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"><img src="<? echo base_url()?>./images/tw1.jpg"  /></li>
+	<li class="tw2" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw2.jpg"  /></li>
+	<li class="tw3" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"><img src="<? echo base_url()?>./images/tw3.jpg"  /></li>
+	<li class="tw4"  data-move-x="-200px"><img src="<? echo base_url()?>./images/tw4.jpg" /></li>
+	<li class="tw5" data-move-y="200px" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw5.jpg"  /></li>
+	<li class="tw6" data-move-y="200px" data-move-x="-200px"><img src="<? echo base_url()?>./images/tw6.jpg"  /></li>
 </div>
     	
     </div>
@@ -350,14 +350,19 @@
 </div>
 </div>
   </div>
-<div style="height: 1500px;"></div>
-<button id="totop">123</button>
+
+<button id="totop">TOP</button>
 <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
- <script type="text/javascript" src="<?php echo base_url()?>/js/particulars.js"></script>
- <script type="text/javascript" src="<?php echo base_url()?>/js/jquery.imagezoom.min.js"></script>
-   
-    <script type="text/javascript" src="<?php echo base_url()?>/js/zuhe.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>/js/particulars.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>/js/jquery.imagezoom.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>/js/mubanjs/jquery.smoove.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>/js/mubanjs/jquery.smoove.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>/js/zuhe.js"></script>
+
+<script>	
+	 $('.tw').children().smoove({offset:'30%'});//在40%触发</script>
 <script>
+	console.log(window.location.href)
 	var id =1;
     var app = angular.module('myApp', []);
     app.controller('siteCtrl', function($scope, $http) {

@@ -151,8 +151,10 @@ input.add,input.min{width:15px}
 	
 }
 
+
+
 #ullist li{
-	height: 35px;
+	height: 30px;
 	width:33.333%;
 	border-top: 2px solid #F03726;
 	float: left;
@@ -166,7 +168,7 @@ input.add,input.min{width:15px}
 
 .cur{
 	background: #D96C00;
-	height: 33px;
+	height: 28px;
 	
 }
 #ullist li:hover{
@@ -190,8 +192,19 @@ input.add,input.min{width:15px}
 	height: 40px;
 	background: #E0690C;
 	position: fixed;
-	bottom: 20px;
-	right: 20px;
+	bottom: 10px;
+	right: 10px;
 	opacity: 0.7;
 
+}
+
+
+.tw{
+	width: 80%;
+	margin: 0 auto;
+	
+}
+.tw img{
+	width: 100%;
+	
 }

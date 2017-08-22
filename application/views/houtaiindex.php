@@ -60,20 +60,10 @@
 					<th>商品分类2(用数字代替)</th>
 					<th>商品价格</th>
 					<th>商品销量</th>
+					<th>图片地址</th>
 					<th>操作</th>
 				</thead>
-				<tbody>
-					<?php 
-						foreach($shows as $show){
-							echo '<tr id="'.$show['id'].'">
-								<td id="name">'.$show['name'].'</td>
-								<td id="fenlei1">'.$show['fenlei1'].'</td>
-								<td id="fenlei2">'.$show['fenlei2'].'</td>
-								<td id="price">'.$show['price'].'</td>
-								<td id="xiaoliang">'.$show['xiaoliang'].'</td>
-							</tr>';
-						};
-					?>
+				<tbody id='tbody'>
 				</tbody>
 			</table>
 		</div>
@@ -119,18 +109,29 @@
 					})
 				}
 			})
-//			$('.li2').on('click','li',function(){
-//				var url = "<?php echo site_url('houtaiindex_Controllers/show') ?>"
-//				if($(this).context.id=='show'){
-//					$.ajax({
-//						type:"get",
-//						url:url,
-//						success:function(data){
-//						}
-//					});
-//				}
-//			})
-
+			$('.li2').on('click','li',function(){
+				var url = "<?php echo site_url('houtaiindex_Controllers/show') ?>"
+				if($(this).context.id=='show'){
+					$.ajax({
+						type:"get",
+						url:url,
+						success:function(data){
+							console.log(data);
+							if(data){
+								let mydata =$.parseJSON(data);
+//								$('#tbody').html('');
+								for(let i = 0;i<mydata.shows.length;i++){
+									var tr=$('<tr></tr>').attr('id','con'+mydata.shows[i].id);
+									$('#tbody').append(tr);
+									$('#con'+mydata.shows[i].id).html('<th class="thname">'+mydata.shows[i].name+'</th><th class="fenlei1">'+mydata.shows[i].fenlei1+'</th><th class="fenlei2">'+mydata.shows[i].fenlei2+'</th><th class="price">'+mydata.shows[i].price+'</th><th class="xiaoliang">'+mydata.shows[i].xiaoliang+'</th><th>图'+i+'</th><th>操作</th>')
+								}
+							}
+							
+							
+						}
+					});
+				}
+			})
 		</script>
 	</body>
 
