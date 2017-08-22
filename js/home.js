@@ -57,10 +57,10 @@ $(".prod").delegate("div","mouseenter",function (){
     //按钮的id
     var anniu = conchild[2].firstChild.id
     //console.log(anniu)
-        $("#"+divid).animate({"width":'356'},700);
+        $("#"+divid).animate({"width":'356'},500);
         $("#"+divid).css('background-color','#FC5E35')
-        $("#"+conimg).animate({"width":'200',"left":'125',"height":'280',"top":'10'},700);
-        $("#"+anniu).animate({"opacity":'1',"top":'140'},700);
+        $("#"+conimg).animate({"width":'200',"left":'125',"height":'280',"top":'10'},500);
+        $("#"+anniu).animate({"opacity":'1',"top":'140'},500);
 });
 
 $(".prod").delegate("div","mouseleave",function (){
@@ -74,10 +74,10 @@ $(".prod").delegate("div","mouseleave",function (){
     var anniu = conchild[2].firstChild.id
     //console.log(anniu)
         $("#"+divid).stop();
-        $("#"+divid).animate({"width":'178'},700);
+        $("#"+divid).animate({"width":'178'},500);
         $("#"+divid).css('background-color','#F0E7C9')
-        $("#"+conimg).animate({"width":'130',"left":'0',"height":'180',"top":'100'},700);
-        $("#"+anniu).animate({"opacity":'0',"top":'0'},700);
+        $("#"+conimg).animate({"width":'130',"left":'0',"height":'180',"top":'100'},500);
+        $("#"+anniu).animate({"opacity":'0',"top":'0'},500);
 });
 
 
