@@ -119,15 +119,12 @@
 							console.log(data);
 							if(data){
 								let mydata =$.parseJSON(data);
-//								$('#tbody').html('');
 								for(let i = 0;i<mydata.shows.length;i++){
 									var tr=$('<tr></tr>').attr('id','con'+mydata.shows[i].id);
 									$('#tbody').append(tr);
 									$('#con'+mydata.shows[i].id).html('<th class="thname">'+mydata.shows[i].name+'</th><th class="fenlei1">'+mydata.shows[i].fenlei1+'</th><th class="fenlei2">'+mydata.shows[i].fenlei2+'</th><th class="price">'+mydata.shows[i].price+'</th><th class="xiaoliang">'+mydata.shows[i].xiaoliang+'</th><th>图'+i+'</th><th>操作</th>')
 								}
 							}
-							
-							
 						}
 					});
 				}

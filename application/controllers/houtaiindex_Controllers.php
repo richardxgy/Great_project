@@ -37,7 +37,6 @@ class houtaiindex_Controllers extends CI_Controller{
 	}
 	public function show(){
 		$data['shows']=$this->houtaiindex_Models->show();
-//		$data['navigations'] = $this->houtaiindex_Models->selectData();
 		header("Access-Control-Allow-Origin: *");
 		echo json_encode($data);
 	}
