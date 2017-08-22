@@ -37,6 +37,7 @@
 </div>
 
 <!--表格-->
+<form action="<?php echo site_url('payment_Controllers/get_data')?>" method="post">
 <div class="list">
     <table class="container">
         <thead class="row">
@@ -54,7 +55,7 @@ foreach ($shop as $value) {
         <thead class="row" id="tr_'.$value['id'].'">
         <td class="col-md-4 col-xs-3">
             <div class="row">
-                <input type="checkbox" class="col-md-1 col-xs-2" id="check_'.$value['id'].'" onclick="check(event)" value="'.$value['bol'].'">
+                <input type="checkbox" class="col-md-1 col-xs-2" id="check_'.$value['id'].'" onclick="check(event)" value="'.$value['id'].'" name="select[]">
                 <img src="'.$url.$value['image'].'" alt="" class="col-md-3 col-xs-12">
                 <p class="col-md-4 col-xs-12">'.$value['name'].'</p>
                 <p class="col-md-4 col-xs-12">'.$value['information'].'</p>
@@ -83,10 +84,10 @@ foreach ($shop as $value) {
     <p class="col-md-5  hidden-xs">移入收藏夹</p>
     <p class="col-md-2 col-xs-6">已选商品：2件</p>
     <p class="col-md-2 col-xs-5">合计：￥<span id="total">0</span></p>
-    <button class="col-md-1 col-xs-3" id="btn1" onclick="settlement()">结算</button>
+    <input type="submit" class="col-md-1 col-xs-3" id="btn1" onclick="settlement()" value="结算">
 
 </div>
-
+</form>
 <hr>
 
 <script type="text/javascript" src="<?php echo base_url() ?>js/shoppingCar.js"></script>
