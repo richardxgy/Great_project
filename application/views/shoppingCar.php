@@ -46,15 +46,15 @@
         <th class="col-md-1 col-xs-1">金额</th>
         <th class="col-md-1 hidden-xs">操作</th>
         </thead>
-        <tbody>
+        <tbody id="tb">
 <?php
 $url = base_url() . "/images/";
 foreach ($shop as $value) {
     echo '
-        <thead class="row" id="'.$value['id'].'">
+        <thead class="row" id="tr_'.$value['id'].'">
         <td class="col-md-4 col-xs-3">
             <div class="row">
-                <input type="checkbox" class="col-md-1 col-xs-2" >
+                <input type="checkbox" class="col-md-1 col-xs-2" id="check_'.$value['id'].'" onclick="check(event)" value="'.$value['bol'].'">
                 <img src="'.$url.$value['image'].'" alt="" class="col-md-3 col-xs-12">
                 <p class="col-md-4 col-xs-12">'.$value['name'].'</p>
                 <p class="col-md-4 col-xs-12">'.$value['information'].'</p>
@@ -78,12 +78,12 @@ foreach ($shop as $value) {
 </div>
 <div class="chekall container">
 
-    <p class="col-md-1 col-xs-3"><input type="checkbox">全选</p>
+    <p class="col-md-1 col-xs-3"><input type="checkbox" onclick="check_all(event)">全选</p>
     <p class="col-md-1 col-xs-3">删除</p>
     <p class="col-md-5  hidden-xs">移入收藏夹</p>
     <p class="col-md-2 col-xs-6">已选商品：2件</p>
-    <p class="col-md-2 col-xs-5">合计：￥{{total}}</p>
-    <button class="col-md-1 col-xs-3" id="btn1" onclick="fn()">结算</button>
+    <p class="col-md-2 col-xs-5">合计：￥<span id="total">0</span></p>
+    <button class="col-md-1 col-xs-3" id="btn1" onclick="settlement()">结算</button>
 
 </div>
 
@@ -95,6 +95,15 @@ foreach ($shop as $value) {
 </script>
 <script type="text/javascript">
     var url3 = "<?php echo site_url('shoppingCar_Controllers/deleteData')?>";
+</script>
+<script type="text/javascript">
+    var url4 = "<?php echo site_url('payment_Controllers')?>";
+</script>
+<script type="text/javascript">
+    var url5 = "<?php echo site_url('shoppingCar_Controllers/updataboolean')?>";
+</script>
+<script type="text/javascript">
+    var url6 = "<?php echo site_url('payment_Controllers/get_data')?>";
 </script>
 </body>
 </html>
