@@ -17,7 +17,7 @@ function change_number(event) {
     var goods_amount = $(amount_id).text();
     //选择框的ID
     var check_id = "#check_" + goods_id;
-    var bol =$(check_id)["0"].checked;
+    var bol = $(check_id)["0"].checked;
     //改变商品数量
     if (goods_number >= 0) {
         if (btn_value == "+") {
@@ -26,7 +26,7 @@ function change_number(event) {
         } else {
             if (goods_number > 0) {
                 goods_number--;
-            }else{
+            } else {
                 return false;
             }
 
@@ -124,7 +124,7 @@ function fm(goods_amount, goods_price) {
 function check_all(event) {
     var ckd = event.target.checked;
     var arr = $("thead");
-    total=0;
+    total = 0;
     if (ckd) {
         for (var i = 1; i < arr.length; i++) {
             var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
@@ -145,18 +145,19 @@ function check_all(event) {
             var goods_id = id.split('_')[1];
 
             var amount_id = "#amt" + goods_id;
-            var goods_amount = 0-parseInt($(amount_id).text());
+            var goods_amount = 0 - parseInt($(amount_id).text());
 
-            fm(goods_amount);}
+            fm(goods_amount);
+        }
     }
 
 }
 //    更改表中的选中状态值
-function updata_bol(goods_id,bol){
+function updata_bol(goods_id, bol) {
     $.ajax({
         data: {
             goods_id: goods_id,
-            goods_bol:bol
+            goods_bol: bol
         },       //要发送的数据
         type: "POST",           //发送的方式
         url: url5, //url地址
@@ -170,37 +171,35 @@ function updata_bol(goods_id,bol){
     });
 }
 //跳转到结算界面
-function settlement(){
-    var id_arr=[];
+function settlement() {
+    /* var id_arr=[];
 
-    var arr = $("thead");
-    for (var i = 1; i < arr.length; i++) {
-        var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-        var id = check_box.id;
-        var goods_id = parseInt(id.split("_")[1]);
-        if (check_box.checked) {
-            id_arr.push(goods_id);
+     var arr = $("thead");
+     for (var i = 1; i < arr.length; i++) {
+     var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
+     var id = check_box.id;
+     var goods_id = parseInt(id.split("_")[1]);
+     if (check_box.checked) {
+     id_arr.push(goods_id);
 
-        }
-    }
-        //向下一个页面传数
-        $.ajax({
-            data: {
-                goods_ids: "666"
-            },       //要发送的数据
-            type: "get",           //发送的方式
-            traditional: true,
-            url: url6, //url地址
-            error: function () { //处理出错的信息
-                console.log("出错了")
-            },
-            success: function (data1) {  //处理正确时的信息
-                console.log("发送数据成功了");
-                console.log(data1)
-               //window.location.href = url4;
-            }
-        });
-
-
-    console.log(id_arr)
+     }
+     }
+     //向下一个页面传数
+     $.ajax({
+     data: {
+     goods_ids: "6666"
+     },       //要发送的数据
+     type: "get",           //发送的方式
+     traditional: true,
+     url: url6, //url地址
+     error: function () { //处理出错的信息
+     console.log("出错了")
+     },
+     success: function (data1) {  //处理正确时的信息
+     console.log("发送数据成功了");
+     console.log(data1)
+     //window.location.href = url4;
+     }
+     });
+     console.log(id_arr)*/
 }
