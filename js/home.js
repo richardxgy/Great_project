@@ -11,8 +11,8 @@ function fn(){
 $(".nav-ul").delegate("li","mouseenter",function (){
     //console.log($(this).context.id)
     var con = $(this).context.id;
-    console.log(con)
-    $("#"+con).animate({"top":'-15'},200)
+    //console.log(con)
+    $("#"+con).animate({"top":'-10'},200)
     //console.log(666)
 
 });

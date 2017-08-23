@@ -20,9 +20,12 @@ class list_Controllers extends CI_Controller{
 //      $this->name='listproduce';
     }
     public function index(){
+        header("Access-Control-Allow-Origin: *");
+        $biaoname= $this->uri->segment(4);
+        //var_dump($biaoname);
         //这里要在home页面传递一个参数来判断到底遍历哪些数据
         //$_GET['表名'],例如 listproduce
-        $biaoname="listproduce";
+        //$biaoname="listproduce";
         $fenleiname='food';
         $data['lists'] = $this->list_Models->selectpaixu($biaoname,'id','true');
         /*这里给个判断，if(美食){food}else{其他}*/
