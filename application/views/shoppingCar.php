@@ -64,9 +64,9 @@ foreach ($shop as $value) {
         </td>
         <td class="col-md-1 col-xs-1" >￥<span id="price'.$value['id'].'">'.$value['price'].'</span></td>
         <td class="col-md-1 col-xs-1 row" id="td'.$value['id'].'" onclick="change_number(event)">
-            <button class="col-md-1 col-xs-1 hidden-xs" value="-"  id="'.$value['id'].'">-</button>
+            <input type="button" class="col-md-1 col-xs-1 hidden-xs" value="-"  id="'.$value['id'].'">
             <input type="text" value="'.$value['number'].'" class="col-md-4 col-xs-12" style="padding: 1px" id="ipt'.$value['id'].'">
-            <button class="col-md-1 col-xs-1 hidden-xs" value="+"  id="'.$value['id'].'">+</button>
+            <input type="button" class="col-md-1 col-xs-1 hidden-xs" value="+"  id="'.$value['id'].'">
         </td>
         <td class="col-md-1 col-xs-1" >￥<span id="amt'.$value['id'].'">'.$value['amount'].'</span></td>
         <td class="col-md-1 col-xs-1 hidden-xs"><p>移入收藏夹</p>
@@ -84,7 +84,7 @@ foreach ($shop as $value) {
     <p class="col-md-5  hidden-xs">移入收藏夹</p>
     <p class="col-md-2 col-xs-6">已选商品：2件</p>
     <p class="col-md-2 col-xs-5">合计：￥<span id="total">0</span></p>
-    <input type="submit" class="col-md-1 col-xs-3" id="btn1" onclick="settlement()" value="结算">
+    <input type="submit" class="col-md-1 col-xs-3" id="btn1" value="结算">
 
 </div>
 </form>
