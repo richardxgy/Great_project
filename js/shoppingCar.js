@@ -170,36 +170,3 @@ function updata_bol(goods_id, bol) {
         }
     });
 }
-//跳转到结算界面
-function settlement() {
-    /* var id_arr=[];
-
-     var arr = $("thead");
-     for (var i = 1; i < arr.length; i++) {
-     var check_box = arr[i].childNodes[1].childNodes["0"].firstElementChild.firstElementChild;
-     var id = check_box.id;
-     var goods_id = parseInt(id.split("_")[1]);
-     if (check_box.checked) {
-     id_arr.push(goods_id);
-
-     }
-     }
-     //向下一个页面传数
-     $.ajax({
-     data: {
-     goods_ids: "6666"
-     },       //要发送的数据
-     type: "get",           //发送的方式
-     traditional: true,
-     url: url6, //url地址
-     error: function () { //处理出错的信息
-     console.log("出错了")
-     },
-     success: function (data1) {  //处理正确时的信息
-     console.log("发送数据成功了");
-     console.log(data1)
-     //window.location.href = url4;
-     }
-     });
-     console.log(id_arr)*/
-}

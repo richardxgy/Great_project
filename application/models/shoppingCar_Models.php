@@ -56,7 +56,7 @@ class shoppingCar_Models extends CI_Model
     {
         $sql=$sql = 'DELETE FROM myshopcar WHERE id='.$id;
         $query = $this->db->query( $sql);
-        // 将接收的数据以数组形式返回：
+        // 将接收的数据以数组形式返回
         return $query;
     }
 }

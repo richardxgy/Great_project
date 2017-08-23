@@ -560,10 +560,22 @@
                 </div>
                 <p>Hi~欢迎来到商城</p>
                 <div class="ycd1">
-                    <a href="#">登录&nbsp;</a>|
-                    <a href="#">注册</a>
+                    <a href="#" id="denglu">登录&nbsp;</a>|
+                    <a href="#" id="zhuce">注册</a>
                 </div>
                 <br>
+                <script>
+                    $("#denglu").click(function(){
+                        var url = "<?php echo site_url('login_Controllers/index')?>";
+                        //console.log(url)
+                        window.location.href = url;
+                    })
+                    $("#zhuce").click(function(){
+                        var url = "<?php echo site_url('registration_Controllers/index')?>";
+                        //console.log(url)
+                        window.location.href = url;
+                    })
+                </script>
 <!--             标签页           -->
                 <div id="ycbqdiv">
 
