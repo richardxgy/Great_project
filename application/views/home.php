@@ -82,7 +82,7 @@
                 <li class="qc" id="navli6"><a href="#"><strong>服装</strong> </a></li>
                 <li class="qc" id="navli7"><a href="#"><strong>百货</strong> </a></li>
                 <li class="qc" id="navli8"><a href="#"><strong>生鲜</strong> </a></li>
-                <li class="qc" id="navli9" name="listproduce"><a href="#"><strong>超市</strong> </a></li>
+                <li class="qc" id="navli9" name="listproduce" name1="fenleiname"><a href="#"><strong>超市</strong> </a></li>
                 <li class="qc last" style="float: right"><a href="#"><button class="btn btn-default"><img src="<?php echo base_url() ?>/images/fl1.png">&nbsp;福利</button></a></li>
             </ul>
         </div>
@@ -91,9 +91,10 @@
 <script>
     $("#navli9").click(function(){
         var name = $("#navli9").attr('name');
-        //console.log(name)
-        var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name;
-        console.log(url)
+        var name1 = $("#navli9").attr('name1');
+        console.log(name1)
+        var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
+        //console.log(url)
         window.location.href = url;
     })
 </script>
@@ -163,7 +164,7 @@
                 <a href="#"  id="erjili1">
                     <img src="<?php echo base_url() ?>/images/sp1.png" alt="...">
                     <strong >点心/蛋糕</strong>
-                    <div id="erjidiv1" style="display: block">
+                    <div id="erjidiv1" >
                         <div class="container" >
                             <div class="row" id="r11">
                                 <div class="col-lg-10"  style="width: 690px; height: 200px;">
