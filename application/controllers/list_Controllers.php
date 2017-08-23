@@ -5,7 +5,6 @@
  * Date: 2017/8/15
  * Time: 18:48
  */
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class list_Controllers extends CI_Controller{
@@ -17,7 +16,6 @@ class list_Controllers extends CI_Controller{
         $this->load->helper('url');
         //添加名叫model的类库：
         $this->load->model('list_Models');
-//      $this->name='listproduce';
     }
     public function index(){
         header("Access-Control-Allow-Origin: *");
@@ -28,7 +26,6 @@ class list_Controllers extends CI_Controller{
         //$biaoname="listproduce";
         $fenleiname='food';
         $data['lists'] = $this->list_Models->selectpaixu($biaoname,'id','true');
-        /*这里给个判断，if(美食){food}else{其他}*/
         $data['leibies'] = $this->list_Models->selectleibie($fenleiname);
         $data['biaoname'] = $biaoname;
         $data['fenleiname']=$fenleiname;
@@ -38,14 +35,14 @@ class list_Controllers extends CI_Controller{
 	public function choose(){
 		header("Access-Control-Allow-Origin: *");
 		$data['chooselist'] = $this->list_Models->choose($_GET['biaoname'],$_GET['fenleiname'],$_GET['id']);
+		/*json格式字符串*/
 		echo json_encode($data);
 	} 
-	
     /*排序*/
 	public function sort(){
 		header("Access-Control-Allow-Origin: *");
 		$data['lists'] = $this->list_Models->selectpaixu($_GET['biaoname'],$_GET['sortby'],$_GET['sortboolen']);
+		/*json格式字符串*/
 		echo json_encode($data);
 	}
-
 }

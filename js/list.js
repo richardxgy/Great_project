@@ -6,7 +6,6 @@
 	   	var $fenleiname=$('.fenleiname').html();
 /*选择商品*/
 		$('.content').on('click','.idname',function(){
-			console.log($(this));
 			$.ajax({
 				type:"get",
 				url:url4,
@@ -30,10 +29,9 @@
 				$(this).attr('class','active');
 				
 	   			isbit=true;
-	   			var url=url2;
 	   			$.ajax({
 	   				type:"get",
-	   				url:url,
+	   				url:url2,
 	   				data:{
 	   					fenleiname:$fenleiname,
 	   					biaoname:$biaoname,
@@ -43,6 +41,7 @@
 	   					if(data){
 	   						/*使后端传过来的json字符串转换为json对象*/
 							let mydata =$.parseJSON(data);
+							console.log(mydata);
 							/*重新渲染页面*/
 							$('.content').html('');
 							for(let i = 0;i<mydata.chooselist.length;i++){
@@ -68,10 +67,9 @@
 			 点了分类再进行排序：对满足分类属性的商品进行排序，所以每次都是重新请求发送数据，再渲染到页面上
 			 * */
 			if(!isbit){	
-				var url=url3;
 				$.ajax({
 					type:"get",
-					url:url,
+					url:url3,
 					data:{
 						biaoname:$biaoname,
 						sortby:$sortby,

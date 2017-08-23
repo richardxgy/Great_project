@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -29,7 +28,7 @@
 		
 		<div class="paixu">
 			<ul class="list">
-				<li class="active" id='id'>综合排序</li>
+				<li class="active" id='id'>综合排序 </li>
 				<li id='xiaoliang'>销量</li>
 				<li id='price'>价格</li>
 				<li>信用</li>
@@ -56,8 +55,8 @@
 	<link href="<?php echo base_url() ?>/css/list.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript">
 		var url1="<?php echo site_url('list_Controllers') ?>";
-		var url2="<?php echo site_url('list_Controllers/choose')?>";
-		var url3 ="<?php echo site_url('list_Controllers/sort')?>";
+		var url2="<?php echo site_url('list_Controllers/choose') ?>";
+		var url3 ="<?php echo site_url('list_Controllers/sort') ?>";
 		var url4 = "<?php echo site_url('particulars_Controllers')?>";
 	</script>
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>/js/list.js"></script>
