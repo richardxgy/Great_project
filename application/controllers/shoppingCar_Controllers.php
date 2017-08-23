@@ -31,7 +31,6 @@ class shoppingCar_Controllers extends CI_Controller
     function getAjaxData(){
         header('Access-Control-Allow-oRigin:*');
         //1，从url地址里面取出参数  test
-
         $this->id = $this->input->get_post('goods_id');
         $this->num = $this->input->get_post('goods_number');
         $this->amount = $this->input->get_post('goods_amount');
