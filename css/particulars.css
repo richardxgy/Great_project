@@ -214,3 +214,55 @@ input.add,input.min{width:15px}
 	width: 100%;
 	height:500px;
 }
+
+/*最下*/
+#dbzhdiv{
+    width: 90%;
+    border-top: 1px #C7CCD1 solid;
+    position: absolute;
+    left: 80px;
+}
+
+#dydiv ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
+
+#zjdiv {
+    width: 90%;
+
+    position: absolute;
+    top: 40px;
+    left: 80px;
+}
+
+#zjdiv ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
+
+#zjdiv2 {
+    width: 90%;
+    position: absolute;
+    top: 70px;
+    left: 60px;
+}
+#zjdiv2 ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}
+
+#zjdiv3 {
+    width: 90%;
+    position: absolute;
+    top: 90px;
+    left: 150px;
+}
+#zjdiv3 ul li{
+    float: left;
+    margin-right: 15px;
+    color: #625A60;
+}

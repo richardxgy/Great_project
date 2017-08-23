@@ -12,7 +12,7 @@
     <link href="<?php echo base_url()?>/css/particulars.css" rel="stylesheet" type="text/css"/>
     <!--<link href="<?php echo base_url()?>css/amazeui.css" rel="stylesheet" type="text/css"/>-->
     <link href="<?php echo base_url()?>/css/xiangqingstyle.css" rel="stylesheet" type="text/css"/>
-   			
+   	<link href="<?php echo base_url()?>/css/home_css.css" rel="stylesheet" type="text/css"/>		
 
     <title>详情</title>
 </head>
@@ -225,21 +225,31 @@
 
                                     <div class="theme-options">
                                         <div class="cart-title">口味</div>
-                                        <ul>
-                                        	<li class="sku-line  selected">炭烧<i></i></li>
-                                            <li class="sku-line" ng-repeat="x in kouwei">{{x.taste}}<i></i></li>
-                                            <!--<li class="sku-line">奶油<i></i></li>
-                                            
-                                            <li class="sku-line">咸香<i></i></li>-->
-                                        </ul>
+                                        <ul id="kwlist">
+                                        	<li class="sku-line  selected">{{kowi[0]}}<i></i></li>
+                                            <li class="sku-line" >{{kowi[1]}}<i></i></li>
+                                            <li class="sku-line" >{{kowi[2]}}<i></i></li>
+                                          <!--<script type="text/javascript">
+                                        	var kwlist = document.getElementById('kwlist');
+                                          	var lilist = document.createElement('li');
+                                          	lilist.setAttribute('class','sku-line');
+                                          	lilist.innerHTML = '香味'
+                                          	var idiv = document.createElement('i');
+                                          	lilist.appendChild(idiv);
+                                          	kwlist.appendChild(lilist);
+                                          	
+                                          </script>  -->
+                                         </ul>
                                     </div>
                                     <div class="theme-options">
                                         <div class="cart-title">包装</div>
-                                        <ul>
-                                            <li class="sku-line selected">手袋单人份<i></i></li>
-                                            <li class="sku-line">礼盒双人份<i></i></li>
-                                            <li class="sku-line">全家福礼包<i></i></li>
+                                        <ul id="ulibao">
+                                            <li class="sku-line selected">{{libao[0].libao}}<i></i></li>
+                                            <li class="sku-line">{{libao[1].libao}}<i></i></li>
+                                            <li class="sku-line">{{libao[2].libao}}<i></i></li>
                                         </ul>
+
+                                        
                                     </div>
                                     <div class="theme-options">
                                         <div class="cart-title number">数量</div>
@@ -342,6 +352,7 @@
     <div role="tabpanel" class="tab-pane" id="piji">
  	  <div id="shopid" style="display: none;"><?php  echo $id; ?></div>
  	  <div id="shopbiao" style="display: none;"><?php  echo $bm; ?></div>
+ 	    <div id="shopkouwei" style="display: none;"></div>
          <p style="height: 300px;">这里暂时用来存放隐藏的盒子，数据存储	</p>  
     </div>
     <div role="tabpanel" class="tab-pane" id="xihuan">
@@ -355,7 +366,54 @@
 </div>
 </div>
   </div>
+        <div id="dbzhdiv">
+            <div id="dydiv">
+                <ul>
+                    <li style="margin-left: 20px;">关于我们&nbsp;</li>
+                    <li>&nbsp;联系我们&nbsp;</li>
+                    <li>&nbsp;联系客服&nbsp;</li>
+                    <li>&nbsp;合作招商&nbsp;</li>
+                    <li>&nbsp;商家帮助&nbsp;</li>
+                    <li>&nbsp;营销中心&nbsp;</li>
+                    <li>&nbsp;手机服务&nbsp;</li>
+                    <li>&nbsp;友情链接&nbsp;</li>
+                    <li>&nbsp;销售联盟&nbsp;</li>
+                    <li>&nbsp;商城社区&nbsp;</li>
+                    <li>&nbsp;风险监测&nbsp;</li>
+                    <li>&nbsp;隐私政策&nbsp;</li>
+                    <li>&nbsp;京东公益&nbsp;</li>
+                    <li>&nbsp;English Site&nbsp;</li>
+                    <li>&nbsp;Media & IR&nbsp;</li>
+                </ul>
+            </div>
 
+<!--            中间-->
+            <div id="zjdiv">
+                <ul>
+                    <li style="margin-left: 120px;">京公网安备 11000002000088号&nbsp;</li>
+                    <li>&nbsp;互联网药品信息服务资格证编号(京)-经营性-2014-0008&nbsp;</li>
+                    <li>&nbsp;新出发京零 字第大120007号&nbsp;</li>
+
+                </ul>
+            </div>
+
+            <div id="zjdiv2">
+                <ul>
+                    <li style="margin-left: 80px;">互联网出版许可证编号新出网证(京)字150号&nbsp;</li>
+                    <li>&nbsp;出版物经营许可证&nbsp;</li>
+                    <li>&nbsp;网络文化经营许可证京网文[2014]2148-348号&nbsp;</li>
+                    <li>&nbsp;违法和不良信息举报电话：4006561155&nbsp;</li>
+                </ul>
+            </div>
+
+            <div id="zjdiv3">
+                <ul>
+                    <li style="margin-left: 80px;">Copyright © 2004 - 2017  京东JD.com 版权所有&nbsp;</li>
+                    <li>&nbsp;消费者维权热线：4006067733经营证照&nbsp;</li>
+                </ul>
+            </div>
+
+        </div>
 <button id="totop">TOP</button>
 <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>/js/particulars.js"></script>
@@ -374,10 +432,10 @@
 	 rotateX:"10deg",moveZ:"-100px",moveY:"100px"
 	 });//在20%触发</script>
 <script>
-	
+	var kw;
 	var id  = $('#shopid').html();
 	var biao  = $('#shopbiao').html();
-	console.log(biao)
+
     var app = angular.module('myApp', []);
     app.controller('siteCtrl', function($scope, $http) {
     	
@@ -394,19 +452,31 @@
 		url: '<?php echo site_url('particulars_Controllers/getshopdata')?>'
 	}).then(function successCallback(response) {
 	      $scope.food = response.data.xiqi[0];
-          $scope.kouwei = response.data.kouwei;
-        $scope.libao = response.data.libao;
+         
+          $scope.libao = response.data.libao;
+          var a = [];
+	     for(var i = 0;i<response.data.kouwei.length;i++){
+	     	
+            a.push(response.data.kouwei[i].taste) ;                   	     	
 	      
-		  console.log($scope.libao)
-		  
+	     }
+	       $scope.kowi=a;
+
+		    console.log( $scope.libao)
 		}, function errorCallback(response) {
 			// 请求失败执行代码
 	});
-  
+   
     });
+    
 
-	
-	
+
+//new Vue({
+//el: '#app',
+//data: {
+//  sites: 
+//}
+//})
 </script>
 
 

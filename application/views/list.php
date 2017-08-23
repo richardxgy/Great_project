@@ -11,6 +11,11 @@
     <title>分类列表页面</title>
 </head>
 <body>
+	<!--
+    	作者：97000433@qq.com
+    	时间：2017-08-23
+    	描述：传递
+    -->
 	<div class='main'>
 		<?php 
 			echo '<div class="biaoname" style="display:none">'.$biaoname.'</div>';
