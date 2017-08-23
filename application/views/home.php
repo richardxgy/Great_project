@@ -45,10 +45,19 @@
         <div class="col-lg-1 hidden-xs"></div>
         <div class="col-lg-7 input-group">
             <input type="text" class="form-control headint" placeholder="搜索" aria-describedby="basic-addon2">
-            <span class="input-group-addon headsp" id="basic-addon2" onclick="fn()">&nbsp;&nbsp;搜索&nbsp;&nbsp;</span>
-        </div><strong></strong>
+            <span class="input-group-addon headsp" id="basic-addon2" onclick="fn()"><a href="#" id="tbss" name="listproduce" name1="fenleiname">&nbsp;&nbsp;搜索&nbsp;&nbsp;</a></span>
+        </div>
     </div>
-
+    <script>
+        $("#tbss").click(function(){
+            var name = $("#navli9").attr('name');
+            var name1 = $("#navli9").attr('name1');
+            console.log(name1)
+            var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
+            //console.log(url)
+            window.location.href = url;
+        })
+    </script>
 
 
 </header>
@@ -74,13 +83,22 @@
                 <li class="qc" id="navli6"><a href="#"><strong>服装</strong> </a></li>
                 <li class="qc" id="navli7"><a href="#"><strong>百货</strong> </a></li>
                 <li class="qc" id="navli8"><a href="#"><strong>生鲜</strong> </a></li>
-                <li class="qc" id="navli9"><a href="#"><strong>超市</strong> </a></li>
+                <li class="qc" id="navli9" name="listproduce" name1="fenleiname"><a href="#"><strong>超市</strong> </a></li>
                 <li class="qc last" style="float: right"><a href="#"><button class="btn btn-default"><img src="<?php echo base_url() ?>/images/fl1.png">&nbsp;福利</button></a></li>
             </ul>
         </div>
 
     </div>
-
+<script>
+    $("#navli9").click(function(){
+        var name = $("#navli9").attr('name');
+        var name1 = $("#navli9").attr('name1');
+        console.log(name1)
+        var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
+        //console.log(url)
+        window.location.href = url;
+    })
+</script>
 
 
 
@@ -147,31 +165,29 @@
                 <a href="#"  id="erjili1">
                     <img src="<?php echo base_url() ?>/images/sp1.png" alt="...">
                     <strong >点心/蛋糕</strong>
-                    <div id="erjidiv1">
+                    <div id="erjidiv1" >
                         <div class="container" >
                             <div class="row" id="r11">
                                 <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                     <h4 style="margin: 0; margin-top: 5px;">点心</h4>
-
-                                        <span>1111</span>
-                                        <span>12222</span>
-                                        <span>33333</span>
-                                        <span>14444</span>
-                                    <span>33333</span>
-                                    <span>33333</span>
-
+                                    <?php
+                                    foreach ($erji01 as $value){
+                                       echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
                                 </div>
                             </div>
 
                             <div class="row r12"  style="width: 690px; height: 200px; position: absolute; left: 0; top: 200px; ">
                                 <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                     <h4 style="margin: 0">蛋糕</h4>
-
-                                        <span>1111</span>
-                                        <span>12222</span>
-                                        <span>33333</span>
-                                        <span>14444</span>
-
+                                    <?php
+                                    foreach ($erji02 as $value){
+                                        echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
                                 </div>
                             </div>
 
@@ -185,7 +201,7 @@
 
 
             <li >
-                <a href="#" id="erjili2">
+                <a href="#"  id="erjili2">
                     <img src="<?php echo base_url() ?>/images/sp1.png" alt="...">
                     <strong>饼干/膨化</strong>
                     <div id="erjidiv2" style="top: -80px;">
@@ -193,14 +209,12 @@
                             <div class="row" id="r13">
                                 <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                     <h4 style="margin: 0; margin-top: 5px;">饼干</h4>
-
-                                    <span>1111</span>
-                                    <span>12222</span>
-                                    <span>33333</span>
-                                    <span>14444</span>
-                                    <span>33333</span>
-                                    <span>33333</span>
-
+                                    <?php
+                                    foreach ($erji03 as $value){
+                                        echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
                                 </div>
                             </div>
 
@@ -208,10 +222,12 @@
                                 <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                     <h4 style="margin: 0">膨化</h4>
 
-                                    <span>1111</span>
-                                    <span>12222</span>
-                                    <span>33333</span>
-                                    <span>14444</span>
+                                    <?php
+                                    foreach ($erji04 as $value){
+                                        echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
 
                                 </div>
                             </div>
@@ -233,12 +249,12 @@
                                 <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                     <h4 style="margin: 0; margin-top: 5px;">熟食</h4>
 
-                                    <span>1111</span>
-                                    <span>12222</span>
-                                    <span>33333</span>
-                                    <span>14444</span>
-                                    <span>33333</span>
-                                    <span>33333</span>
+                                    <?php
+                                    foreach ($erji05 as $value){
+                                        echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
 
                                 </div>
                             </div>
@@ -247,10 +263,12 @@
                                 <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                     <h4 style="margin: 0">肉类</h4>
 
-                                    <span>1111</span>
-                                    <span>12222</span>
-                                    <span>33333</span>
-                                    <span>14444</span>
+                                    <?php
+                                    foreach ($erji06 as $value){
+                                        echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                    ?>
 
                                 </div>
                             </div>
@@ -269,26 +287,24 @@
                         <div class="row" id="r17">
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">素食</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
-
+                                <?php
+                                foreach ($erji03 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
 
                         <div class="row r18"  style="width: 690px; height: 200px; position: absolute; left: 0; top: 200px; ">
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">卤味</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-
+                                <?php
+                                foreach ($erji05 as $value){
+                                    echo '
+                                        <span>'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -306,26 +322,24 @@
                         <div class="row" id="r19">
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">坚果</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
-
+                                <?php
+                                foreach ($erji07 as $value){
+                                    echo '
+                                        <span style="margin: 3px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
 
                         <div class="row r20"  style="width: 690px; height: 200px; position: absolute; left: 0; top: 200px; ">
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">炒货</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-
+                                <?php
+                                foreach ($erji08 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -344,12 +358,12 @@
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">糖果</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
+                                <?php
+                                foreach ($erji03 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -358,10 +372,12 @@
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">蜜饯</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
+                                <?php
+                                foreach ($erji04 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -381,12 +397,12 @@
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">巧克力</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
+                                <?php
+                                foreach ($erji01 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -395,10 +411,12 @@
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">芝士</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
+                                <?php
+                                foreach ($erji02 as $value){
+                                    echo '
+                                        <span style="margin: 12px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -417,12 +435,12 @@
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">海味</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
+                                <?php
+                                foreach ($erji06 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -431,10 +449,12 @@
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">河鲜</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
+                                <?php
+                                foreach ($erji05 as $value){
+                                    echo '
+                                        <span style="margin: 8px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -453,12 +473,12 @@
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">花茶</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
+                                <?php
+                                foreach ($erji08 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -467,10 +487,12 @@
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">果茶</h4>
 
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
+                                <?php
+                                foreach ($erji07 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
 
                             </div>
                         </div>
@@ -489,26 +511,24 @@
                         <div class="row" id="r29">
                             <div class="col-lg-10"  style="width: 690px; height: 200px;">
                                 <h4 style="margin: 0; margin-top: 5px;">品牌</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-                                <span>33333</span>
-                                <span>33333</span>
-
+                                <?php
+                                foreach ($erji01 as $value){
+                                    echo '
+                                        <span style="margin: 5px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
 
                         <div class="row r30"  style="width: 690px; height: 200px; position: absolute; left: 0; top: 200px; ">
                             <div class="col-lg-10"   style="width: 680px; height: 200px;">
                                 <h4 style="margin: 0">礼包</h4>
-
-                                <span>1111</span>
-                                <span>12222</span>
-                                <span>33333</span>
-                                <span>14444</span>
-
+                                <?php
+                                foreach ($erji02 as $value){
+                                    echo '
+                                        <span style="margin:12px;">'.$value['name'].'</span>
+                                       ';}
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -517,6 +537,17 @@
                 </a>
             </li>
         </ul>
+        <script>
+            $(".erjiul").delegate("a","click",function (){
+                //console.log(666) name="listproduce" name1="fenleiname"
+                var name = "listproduce"
+                var name1 = "fenleiname"
+                var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
+                //console.log(url)
+                window.location.href = url;
+            })
+        </script>
+
     </div>
 
 <!--右侧悬浮框-->
