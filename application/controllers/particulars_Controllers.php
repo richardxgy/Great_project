@@ -39,12 +39,12 @@ class particulars_Controllers extends CI_Controller{
 //	   var_dump($_GET['id']);
 //	   $id= $this->uri->segment(4);
 //       var_dump($id);
-		$data = $this->particulars_Models->getxiangxi($_GET['id'],$_GET['bm']);
-      
-	     
+		$data['xiqi'] = $this->particulars_Models->getxiangxi($_GET['id'],$_GET['bm']);
+        $data['kouwei'] = $this->particulars_Models->getkouwei($_GET['id']);
+	      $data['libao'] = $this->particulars_Models->getlibao($_GET['id']);
 //      $this->load->view('particulars',$data);
          
-//    var_dump($data);
+//        var_dump($data);
         echo json_encode($data);
 		
 		

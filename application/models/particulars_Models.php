@@ -22,4 +22,22 @@ class particulars_Models extends CI_Model {
            return $query->result_array();
 //         var_dump($query->result_array());
 	   }
+	   
+	   function getkouwei($id)
+       {
+
+      $sql = 'Select kouwei.taste FROM jiaocha left join kouwei ON jiaocha.koweiid = kouwei.num WHERE jiaocha.dataid ='.$id;  
+            $query = $this->db->query($sql);
+           return $query->result_array();
+//         var_dump($query->result_array());
+	   }
+	   
+	function getlibao($id)
+       {
+
+      $sql = 'Select kouwei.libao FROM jiaocha left join kouwei ON jiaocha.libaoid = kouwei.num WHERE jiaocha.dataid ='.$id;  
+            $query = $this->db->query($sql);
+           return $query->result_array();
+//         var_dump($query->result_array());
+	   }   
 }

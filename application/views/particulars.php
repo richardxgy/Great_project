@@ -226,10 +226,11 @@
                                     <div class="theme-options">
                                         <div class="cart-title">口味</div>
                                         <ul>
-                                            <li class="sku-line selected">原味<i></i></li>
-                                            <li class="sku-line">奶油<i></i></li>
-                                            <li class="sku-line">炭烧<i></i></li>
-                                            <li class="sku-line">咸香<i></i></li>
+                                        	<li class="sku-line  selected">炭烧<i></i></li>
+                                            <li class="sku-line" ng-repeat="x in kouwei">{{x.taste}}<i></i></li>
+                                            <!--<li class="sku-line">奶油<i></i></li>
+                                            
+                                            <li class="sku-line">咸香<i></i></li>-->
                                         </ul>
                                     </div>
                                     <div class="theme-options">
@@ -341,7 +342,7 @@
     <div role="tabpanel" class="tab-pane" id="piji">
  	  <div id="shopid" style="display: none;"><?php  echo $id; ?></div>
  	  <div id="shopbiao" style="display: none;"><?php  echo $bm; ?></div>
-           这里暂时用来存放隐藏的盒子，数据存储	
+         <p style="height: 300px;">这里暂时用来存放隐藏的盒子，数据存储	</p>  
     </div>
     <div role="tabpanel" class="tab-pane" id="xihuan">
  <div class="zzsc">
@@ -392,10 +393,11 @@
 		
 		url: '<?php echo site_url('particulars_Controllers/getshopdata')?>'
 	}).then(function successCallback(response) {
-	      $scope.food = response.data[0];
-
+	      $scope.food = response.data.xiqi[0];
+          $scope.kouwei = response.data.kouwei;
+        $scope.libao = response.data.libao;
 	      
-		  console.log($scope.food)
+		  console.log($scope.libao)
 		  
 		}, function errorCallback(response) {
 			// 请求失败执行代码
