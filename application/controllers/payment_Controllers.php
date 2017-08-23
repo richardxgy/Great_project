@@ -30,7 +30,33 @@ class payment_Controllers extends CI_Controller
         header('Access-Control-Allow-oRigin:*');
         $select = $_POST['select'];
         $data['shop'] = $this->payment_Models->sel_data($select);
-        //添加名为:view的类库，将$data数据发送到news.php文件:
-        $this->load->view('payment',$data);
+        //计算金额
+        $data['tatol'] = 0;
+        foreach ($data['shop'] as $item) {
+            $data['tatol'] += $item['amount'];
+        }
+//        调用方法，查询地址信息
+        $adddress_list=$this->select_address();
+        $data['address_list']=$adddress_list;
+        $this->load->view('payment', $data);
     }
+
+//    接收地址信息
+    function get_address()
+    {
+        header('Access-Control-Allow-oRigin:*');
+        $user_name = $this->user_name = $this->input->get_post('user_name');
+        $user_phone = $this->user_phone = $this->input->get_post('user_phone');
+        $provinces = $this->provinces = $this->input->get_post('provinces');
+        $city = $this->city = $this->input->get_post('city');
+        $county = $this->county = $this->input->get_post('county');
+        $user_intro = $this->user_intro = $this->input->get_post('user_intro');
+        $data['shop1'] = $this->payment_Models->insertdata($user_name, $user_phone, $provinces, $city, $county, $user_intro);
+    }
+//    查询地址
+function select_address(){
+    $data['shop2'] = $this->payment_Models->select_data();
+    return $data['shop2'];
+}
+
 }
