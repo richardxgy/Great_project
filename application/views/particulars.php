@@ -318,7 +318,7 @@
               
             var str1 = str
             var tallprice = num*price;
-//          console.log(tallprice)
+//          console.log(tallprice)s
             $.ajax({
                 type:"post",
                 url: "<?php echo site_url('shoppingCar_Controllers/updata')?>",

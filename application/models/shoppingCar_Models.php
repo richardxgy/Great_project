@@ -25,7 +25,7 @@ class shoppingCar_Models extends CI_Model
         return $query->result_array();
     }
 	function payforinsert($name,$price,$str,$num,$tallprice,$imgid){
-//		var_dump($_POST);
+//		var_dump($_POST);huo
         //$id=$_POST['id'];
         $sql = 'INSERT INTO myshopcar(name,price,information,number,amount,image) VALUES ("'.$name.'","'.$price.'","'.$str.'","'.$num.'","'.$tallprice.'","'.$imgid.'")';
         $query = $this->db->query($sql);
