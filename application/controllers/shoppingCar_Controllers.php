@@ -60,5 +60,4 @@ function updataboolean(){
     $bol= $this->bol;
     $data['shop1'] = $this->shoppingCar_Models->updatabol($id,$bol);
 }
-
 }
