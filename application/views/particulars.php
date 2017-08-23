@@ -321,7 +321,7 @@
 //          console.log(tallprice)
             $.ajax({
                 type:"post",
-                url: "<?php echo site_url('shoppingCar_Controllers/updata')?>",
+                url: "<?php echo site_url('getCar_Controllers/cuncar')?>",
                 async:true,
                 data:{
                     name:name,
@@ -333,7 +333,8 @@
 
                                       },
                 success:function () {
-                 var url = "<?php echo site_url('shoppingCar_Controllers/index')?>";
+                    console.log(1)
+                 var url = "<?php echo site_url('getCar_Controllers/index')?>";
                   window.location.href = url;
                 }
             })
@@ -370,7 +371,7 @@
 //          console.log(tallprice)
             $.ajax({
                 type:"post",
-                url: "<?php echo site_url('shoppingCar_Controllers/updata')?>",
+                url: "<?php echo site_url('getCar_Controllers/cuncar')?>",
                 async:true,
                 data:{
                     name:name,
@@ -382,7 +383,7 @@
 
                                       },
                 success:function () {
-//                  var url = "<?php echo site_url('shoppingCar')?>";
+//                  var url = "<?php echo site_url('getCar_Controllers/index')?>";
 //                  window.location.href = url;
                 }
             })
