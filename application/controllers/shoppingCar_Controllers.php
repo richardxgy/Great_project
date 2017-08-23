@@ -10,7 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class shoppingCar_Controllers extends CI_Controller
 {
-
     //构造函数：
     function shoppingCar_Controllers()
     {
@@ -20,8 +19,6 @@ class shoppingCar_Controllers extends CI_Controller
         $this->load->helper('url');
         //添加名叫model的类库：
         $this->load->model('shoppingCar_Models');
-
-
     }
 
     public function index()
