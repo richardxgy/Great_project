@@ -17,14 +17,26 @@ class shoppingCar_Controllers extends CI_Controller{
         //添加名叫helper的类库：
         $this->load->helper('url');
         //添加名叫model的类库：
-//        $this->load->model('shoppingCar_Models');
+          $this->load->model('shoppingCar_Models');
 
     }
 
     public function index()
     {
 
-        $this->load->view('shoppingCar');
+      $this->load->view('shoppingCar');
     }
+	function updata(){
+        $name = $_POST['name'];
+        $price = $_POST['price'];
+        $str = $_POST['str'];
+        $num = $_POST['num'];
+        $tallprice = $_POST['tallprice'];
+        $imgid = $_POST['imgid'];
+        $shop = $this->shoppingCar_Models->payforinsert($name,$price,$str,$num,$tallprice,$imgid);
+
+
+    }
+	
 
 }

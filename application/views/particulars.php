@@ -82,7 +82,7 @@
         <div class="flexslider">
             <ul class="slides">
                 <li>
-                    <img src="<? echo base_url()?>./images/01.jpg" title="pic"/>
+                    <img id="imgid" src="<? echo base_url()?>./images/01.jpg" title="pic"/>
                 </li>
                 <li>
                     <img src="<? echo base_url()?>./images/02.jpg" />
@@ -153,7 +153,7 @@
             <div class="tb-detail-price">
                 <li class="price iteminfo_price">
                     <dt>促销价</dt>
-                    <dd><em>¥</em><b class="sys_item_price">{{food.price}}&nbsp;&nbsp;</b>
+                    <dd><em>¥</em><b class="sys_item_price" id="price">{{food.price}}&nbsp;&nbsp;</b>
            
                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&hearts;商品倒计时：<strong style="font-size: large;" id="daojishi"></strong>
                  
@@ -299,14 +299,102 @@
     </div>
     <li>
         <div class="clearfix tb-btn tb-btn-buy theme-login">
-            <a id="LikBuy" title="点此按钮到下一步确认购买信息" href="#">立即购买</a>
+            <a id="shoping" title="点此按钮到下一步确认购买信息">立即购买</a>
         </div>
     </li>
+    <script type="text/javascript">
+    	var str;
+       
+        $("#shoping").click(function fn() {
+            var name = $("h1").html();
+          
+//          var imgid = $("#imgid")[0].src;
+            
+            var imgid= "01.jpg"
+            console.log(imgid)
+            var price = parseInt($("#price").html());
+//            console.log(price)
+            var num = parseInt($("#text_box").val());
+              
+            var str1 = str
+            var tallprice = num*price;
+//          console.log(tallprice)
+            $.ajax({
+                type:"post",
+                url: "<?php echo site_url('shoppingCar_Controllers/updata')?>",
+                async:true,
+                data:{
+                    name:name,
+                    price:price,
+                    str:str1,
+                    num:num,
+                    tallprice:tallprice,
+                   imgid:imgid,
+
+                                      },
+                success:function () {
+                 var url = "<?php echo site_url('shoppingCar_Controllers/index')?>";
+                  window.location.href = url;
+                }
+            })
+
+        })
+
+        $("#kwlist").delegate("li","click",function () {
+             str = $(this).text();
+//            console.log(str)
+
+        })
+    </script>
+    
+    
+    
     <li>
         <div class="clearfix tb-btn tb-btn-basket theme-login">
-            <a id="LikBasket" title="加入购物车" href="#"><i></i>加入购物车</a>
+            <a id="shopcar" title="加入购物车"><i></i>加入购物车</a>
         </div>
     </li>
+     <script type="text/javascript">
+    	var str;
+       
+        $("#shopcar").click(function fn() {
+            var name = $("h1").html();
+          var imgid = $("#imgid")[0].src;
+//          var imgid = $("#imgid").html();
+            var price = parseInt($("#price").html());
+//            console.log(price)
+            var num = parseInt($("#text_box").val());
+              var imgid = $("#imgid").html();
+            var str1 = str
+            var tallprice = num*price;
+//          console.log(tallprice)
+            $.ajax({
+                type:"post",
+                url: "<?php echo site_url('shoppingCar_Controllers/updata')?>",
+                async:true,
+                data:{
+                    name:name,
+                    price:price,
+                    str:str1,
+                    num:num,
+                    tallprice:tallprice,
+                     imgid:imgid,
+
+                                      },
+                success:function () {
+//                  var url = "<?php echo site_url('shoppingCar')?>";
+//                  window.location.href = url;
+                }
+            })
+
+        })
+
+        $("#kwlist").delegate("li","click",function () {
+             str = $(this).text();
+//            console.log(str)
+
+        })
+    </script>
 </div>
 
 </div>

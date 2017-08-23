@@ -12,5 +12,15 @@ class shoppingCar_Models extends CI_Model {
         //数据库对象连接数据库：
         $this -> load -> database();
     }
+	function payforinsert($name,$price,$str,$num,$tallprice,$imgid){
+//		var_dump($_POST);
+        //$id=$_POST['id'];
+        $sql = 'INSERT INTO myshopcar(name,price,information,number,amount,image) VALUES ("'.$name.'","'.$price.'","'.$str.'","'.$num.'","'.$tallprice.'","'.$imgid.'")';
+        $query = $this->db->query($sql);
+        //$data['payforshop'] = $this->shopingcarModels->insert($name,$price,$str,$num);  // 注册信息添加，通过registerModels的insert方法
+        //$this->load->view('payfor',$data);
+
+
+    }
 
 }
