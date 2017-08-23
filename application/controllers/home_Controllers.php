@@ -25,7 +25,17 @@ class home_Controllers extends CI_Controller{
 
         $data['erji02'] = $this->home_Models->geterji02();
 
+        $data['erji03'] = $this->home_Models->geterji03();
 
+        $data['erji04'] = $this->home_Models->geterji04();
+
+        $data['erji05'] = $this->home_Models->geterji05();
+
+        $data['erji06'] = $this->home_Models->geterji06();
+
+        $data['erji07'] = $this->home_Models->geterji07();
+
+        $data['erji08'] = $this->home_Models->geterji08();
 
         $this->load->view('home',$data);
     }
