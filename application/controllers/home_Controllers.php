@@ -20,8 +20,24 @@ class home_Controllers extends CI_Controller{
     }
 
     public function index(){
+        //调用getSinger()方法，获得的值放在名为$data的函数内：
+        $data['erji01'] = $this->home_Models->geterji01();
 
-        $this->load->view('home');
+        $data['erji02'] = $this->home_Models->geterji02();
+
+        $data['erji03'] = $this->home_Models->geterji03();
+
+        $data['erji04'] = $this->home_Models->geterji04();
+
+        $data['erji05'] = $this->home_Models->geterji05();
+
+        $data['erji06'] = $this->home_Models->geterji06();
+
+        $data['erji07'] = $this->home_Models->geterji07();
+
+        $data['erji08'] = $this->home_Models->geterji08();
+
+        $this->load->view('home',$data);
     }
 
 

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,11 +10,6 @@
     <title>分类列表页面</title>
 </head>
 <body>
-	<!--
-    	作者：97000433@qq.com
-    	时间：2017-08-23
-    	描述：传递
-    -->
 	<div class='main'>
 		<?php 
 			echo '<div class="biaoname" style="display:none">'.$biaoname.'</div>';
@@ -34,7 +28,7 @@
 		
 		<div class="paixu">
 			<ul class="list">
-				<li class="active" id='id'>综合排序</li>
+				<li class="active" id='id'>综合排序 </li>
 				<li id='xiaoliang'>销量</li>
 				<li id='price'>价格</li>
 				<li>信用</li>
@@ -60,19 +54,10 @@
 	</div>
 	<link href="<?php echo base_url() ?>/css/list.css" rel="stylesheet" type="text/css"/>
 	<script type="text/javascript">
-		
-			var biaoname=$('.biaoname').html();
 		var url1="<?php echo site_url('list_Controllers') ?>";
-		var url2="<?php echo site_url('list_Controllers/choose')?>";
-		var url3 ="<?php echo site_url('list_Controllers/sort')?>";
-		
-			$('.content').on('click','.idname',function(){
-			console.log($(this).context.id);
-			var id =$(this).context.id;
-			var url4 = "<?php echo site_url('particulars_Controllers/index')?>/id/"+id+"/bm/"+biaoname;
-			window.location.href=url4;
-			 })
-		
+		var url2="<?php echo site_url('list_Controllers/choose') ?>";
+		var url3 ="<?php echo site_url('list_Controllers/sort') ?>";
+		var url4 = "<?php echo site_url('particulars_Controllers')?>";
 	</script>
     <script type="text/javascript" charset="utf-8" src="<?php echo base_url() ?>/js/list.js"></script>
 </body>
