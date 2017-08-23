@@ -19,12 +19,15 @@ class list_Controllers extends CI_Controller{
     }
     public function index(){
         header("Access-Control-Allow-Origin: *");
-        $biaoname= $this->uri->segment(4);
-        //var_dump($biaoname);
+        if($this->uri->segment(4)){
+        	$biaoname= $this->uri->segment(4);
+        	$fenleiname=$this->uri->segment(6);
+        }else{
+        	$biaoname="listproduce";
+        	$fenleiname='food';
+        }
         //这里要在home页面传递一个参数来判断到底遍历哪些数据
         //$_GET['表名'],例如 listproduce
-        //$biaoname="listproduce";
-        $fenleiname='food';
         $data['lists'] = $this->list_Models->selectpaixu($biaoname,'id','true');
         $data['leibies'] = $this->list_Models->selectleibie($fenleiname);
         $data['biaoname'] = $biaoname;
