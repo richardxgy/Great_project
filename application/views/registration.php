@@ -29,18 +29,16 @@
 					<div class="am-tabs" id="doc-my-tabs">
 						<ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
 							<li class="am-active">
-								<a class="emall">邮箱注册</a>
+								<a class="emall">账号注册</a>
 							</li>
-							<li class="am-active">
-								<a class="tel">手机号注册</a>
-							</li>
+
 						</ul>
 						<div class="am-tabs-bd">
 							<div class="am-tab-panel am-active">
 								<form method="post">
 									<div class="user-email">
 										<label for="email"><i class="am-icon-envelope-o"></i></label>
-										<input type="text" name="name" id="name" placeholder="请输入邮箱账号">
+										<input type="text" name="name" id="name" placeholder="请输入账号">
 										<span class="sp"></span><br>
 									</div>
 									<div class="user-pass">
@@ -62,6 +60,13 @@
 								<div class="am-cf">
 									<input type="button" name="" value="注册" id="butn1" class="am-btn am-btn-primary am-btn-sm am-fl">
 								</div>
+								<script>
+									$("#butn1").click(function(){
+										var url = "<?php echo site_url('login_Controllers/index')?>";
+										//console.log(url)
+										window.location.href = url;
+									})
+								</script>
 							</div>
 						</div>
 					</div>
@@ -87,7 +92,7 @@
 						<a href="# ">合作伙伴</a>
 						<a href="# ">联系我们</a>
 						<a href="# ">网站地图</a>
-						<em>© 2015-2025 Hengwang.com 版权所有. 更多模板 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></em>
+						<em>© 2035-2095 Hengwang.com 版权所有. 更多模板 </em>
 					</p>
 				</div>
 			</div>
