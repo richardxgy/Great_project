@@ -29,7 +29,7 @@ class particulars_Controllers extends CI_Controller{
 		$bm= $this->uri->segment(6);
 		$data['id'] =$id;
 		$data['bm'] =$bm;
-//		var_dump($bm);
+//		var_dump($id);
 											;  
         $this->load->view('particulars',$data);
     }
