@@ -25,6 +25,8 @@ class shoppingCar_Controllers extends CI_Controller
     {
 //调用getSinger()方法，获得的值放在名为$data的函数内：
         $data['shop'] = $this->shoppingCar_Models->getShopingcardata();
+        //var_dump($data);
+
         $this->load->view('shoppingCar',$data);
     }
 //
