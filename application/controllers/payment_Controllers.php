@@ -30,6 +30,7 @@ class payment_Controllers extends CI_Controller
         header('Access-Control-Allow-oRigin:*');
         $select = $_POST['select'];
         $data['shop'] = $this->payment_Models->sel_data($select);
+        $index=sizeof($data['shop']);
         //计算金额
         $data['tatol'] = 0;
         foreach ($data['shop'] as $item) {
@@ -38,7 +39,9 @@ class payment_Controllers extends CI_Controller
 //        调用方法，查询地址信息
         $adddress_list=$this->select_address();
         $data['address_list']=$adddress_list;
+        if($index!=0){
         $this->load->view('payment', $data);
+        }
     }
 
 //    接收地址信息
