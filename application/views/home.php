@@ -50,9 +50,30 @@
     </div>
     <script>
         $("#tbss").click(function(){
+            console.log(666)
             var name = $("#navli9").attr('name');
             var name1 = $("#navli9").attr('name1');
-            console.log(name1)
+            //console.log(name1)
+//            $.ajax({
+//                data: {
+//                    name:name,
+//                    name1:name1,
+//                },       //要发送的数据
+//                type: "POST",           //发送的方式
+//                url: "<?php //echo site_url('list_Controllers/index')?>//",
+//                error: function () { //处理出错的信息
+//                    console.log("出错了")
+//                },
+//                success: function (data1) {  //处理正确时的信息
+//                    console.log("成功了");
+//                    var url = "<?php //echo site_url('list_Controllers/index')?>//"
+//                    //console.log(url)
+//                    //window.location.href = url;
+//
+//                }
+//            });
+
+
             var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
             //console.log(url)
             window.location.href = url;

@@ -26,6 +26,11 @@ class list_Controllers extends CI_Controller{
         	$biaoname="listproduce";
         	$fenleiname='food';
         }
+
+//        $biaoname=$_POST['name'];
+//        $fenleiname=$_POST['name1'];
+//        var_dump($_POST);
+//        exit;
         //这里要在home页面传递一个参数来判断到底遍历哪些数据
         //$_GET['表名'],例如 listproduce
         $data['lists'] = $this->list_Models->selectpaixu($biaoname,'id','true');
@@ -48,4 +53,11 @@ class list_Controllers extends CI_Controller{
 		/*json格式字符串*/
 		echo json_encode($data);
 	}
+
+//    public function ceshi(){
+//        header("Access-Control-Allow-Origin: *");
+//        var_dump($_POST);
+//        exit;
+//        $this->load->view('list');
+//    }
 }
