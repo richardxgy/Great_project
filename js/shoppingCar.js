@@ -98,9 +98,12 @@ function check(event) {
     var goods_amount = parseInt($(amount_id).text());
     if (bol) {
         fm(goods_amount);
+    //    提交按钮是否可点击
+      $("#btn1")["0"].disabled=false;
     } else {
         goods_amount = 0 - goods_amount;
         fm(goods_amount);
+        $("#btn1")["0"].disabled=true;
     }
 
 }
@@ -134,7 +137,7 @@ function check_all(event) {
             var amount_id = "#amt" + goods_id;
             var goods_amount = parseInt($(amount_id).text());
             fm(goods_amount);
-
+            $("#btn1")["0"].disabled=false;
 
         }
     } else {
@@ -146,7 +149,7 @@ function check_all(event) {
 
             var amount_id = "#amt" + goods_id;
             var goods_amount = 0 - parseInt($(amount_id).text());
-
+            $("#btn1")["0"].disabled=true;
             fm(goods_amount);
         }
     }
