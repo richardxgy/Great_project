@@ -334,7 +334,7 @@
                                       },
                 success:function () {
                     console.log(1)
-                 var url = "<?php echo site_url('getCar_Controllers/index')?>";
+                 var url = "<?php echo site_url('shoppingCar_Controllers/index')?>";
                   window.location.href = url;
                 }
             })
@@ -383,8 +383,8 @@
 
                                       },
                 success:function () {
-//                  var url = "<?php echo site_url('getCar_Controllers/index')?>";
-//                  window.location.href = url;
+                  var url = "<?php echo site_url('shoppingCar_Controllers/index')?>";
+                  window.location.href = url;
                 }
             })
 

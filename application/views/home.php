@@ -45,7 +45,7 @@
         <div class="col-lg-1 hidden-xs"></div>
         <div class="col-lg-7 input-group">
             <input type="text" class="form-control headint" placeholder="搜索" aria-describedby="basic-addon2">
-            <span class="input-group-addon headsp" id="basic-addon2" onclick="fn()"><a href="#" id="tbss" name="listproduce" name1="fenleiname">&nbsp;&nbsp;搜索&nbsp;&nbsp;</a></span>
+            <span class="input-group-addon headsp" id="basic-addon2" onclick="fn()"><a href="#" id="tbss" name="listproduce" name1="food">&nbsp;&nbsp;搜索&nbsp;&nbsp;</a></span>
         </div>
     </div>
     <script>
@@ -83,7 +83,7 @@
                 <li class="qc" id="navli6"><a href="#"><strong>服装</strong> </a></li>
                 <li class="qc" id="navli7"><a href="#"><strong>百货</strong> </a></li>
                 <li class="qc" id="navli8"><a href="#"><strong>生鲜</strong> </a></li>
-                <li class="qc" id="navli9" name="listproduce" name1="fenleiname"><a href="#"><strong>超市</strong> </a></li>
+                <li class="qc" id="navli9" name="listproduce" name1="food"><a href="#"><strong>超市</strong> </a></li>
                 <li class="qc last" style="float: right"><a href="#"><button class="btn btn-default"><img src="<?php echo base_url() ?>/images/fl1.png">&nbsp;福利</button></a></li>
             </ul>
         </div>
@@ -541,7 +541,7 @@
             $(".erjiul").delegate("a","click",function (){
                 //console.log(666) name="listproduce" name1="fenleiname"
                 var name = "listproduce"
-                var name1 = "fenleiname"
+                var name1 = "food"
                 var url = "<?php echo site_url('list_Controllers/index')?>/name/"+name+"/name1/"+name1;
                 //console.log(url)
                 window.location.href = url;

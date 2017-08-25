@@ -49,6 +49,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="am-cf">
 						<input type="button" name="" value="登 录" id="login" class="am-btn am-btn-primary am-btn-sm">
 					</div>
+					<script>
+						$("#login").click(function(){
+							var url = "<?php echo site_url('home_Controllers/index')?>";
+							//console.log(url)
+							window.location.href = url;
+						})
+					</script>
 					<div class="partner">
 						<h3>合作账号</h3>
 						<div class="am-btn-group">
